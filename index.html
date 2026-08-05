@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
 
@@ -10,32 +10,35 @@
 
   <meta
     name="description"
-    content="Pure Step Clean provides premium residential, Airbnb, commercial cleaning, organization, property support, and small repair services."
+    content="A Pure Step Clean oferece limpeza residencial, comercial, Airbnb, organização e suporte para propriedades em Limeira e região."
   >
 
-  <meta name="theme-color" content="#071f45">
+  <meta name="theme-color" content="#061f45">
 
-  <title>Pure Step Clean | Premium Cleaning & Property Care</title>
+  <title>
+    Pure Step Clean | Limpeza Premium em Limeira e Região
+  </title>
 
   <style>
     :root {
-      --navy: #071f45;
-      --navy-soft: #123a68;
-      --teal: #02aaa7;
-      --aqua: #25c9c1;
-      --purple: #7656d9;
-      --coral: #ff6868;
-      --green: #08a660;
+      --navy: #061f45;
+      --navy-light: #113967;
+      --teal: #00aaa7;
+      --aqua: #2ccbc2;
+      --purple: #7958dd;
+      --coral: #ff696d;
+      --green: #13a866;
       --white: #ffffff;
-      --off-white: #fbfaf8;
-      --light: #f2f7f7;
-      --text: #17313d;
-      --muted: #60737b;
-      --border: rgba(7, 31, 69, 0.12);
-      --shadow: 0 24px 70px rgba(7, 31, 69, 0.12);
-      --radius-large: 30px;
-      --radius-medium: 20px;
-      --radius-small: 13px;
+      --cream: #fbfaf8;
+      --soft: #f2f8f8;
+      --text: #18313d;
+      --muted: #60737c;
+      --border: rgba(6, 31, 69, 0.12);
+      --shadow: 0 24px 70px rgba(6, 31, 69, 0.13);
+      --shadow-soft: 0 14px 40px rgba(6, 31, 69, 0.08);
+      --large: 30px;
+      --medium: 20px;
+      --small: 13px;
       --container: 1180px;
     }
 
@@ -89,13 +92,15 @@
     h1,
     h2,
     h3,
+    h4,
     p {
       margin-top: 0;
     }
 
     h1,
     h2,
-    h3 {
+    h3,
+    h4 {
       color: var(--navy);
       line-height: 1.08;
       letter-spacing: -0.04em;
@@ -103,17 +108,22 @@
 
     h1 {
       margin-bottom: 24px;
-      font-size: clamp(3rem, 7vw, 6.3rem);
+      font-size: clamp(3rem, 7vw, 6.2rem);
     }
 
     h2 {
       margin-bottom: 20px;
-      font-size: clamp(2.2rem, 4.5vw, 4.2rem);
+      font-size: clamp(2.15rem, 4.5vw, 4.1rem);
     }
 
     h3 {
       margin-bottom: 10px;
       font-size: 1.35rem;
+    }
+
+    h4 {
+      margin-bottom: 8px;
+      font-size: 1.05rem;
     }
 
     section {
@@ -131,9 +141,9 @@
       gap: 10px;
       margin-bottom: 14px;
       color: var(--teal);
-      font-size: 0.78rem;
+      font-size: 0.77rem;
       font-weight: 900;
-      letter-spacing: 0.16em;
+      letter-spacing: 0.15em;
       text-transform: uppercase;
     }
 
@@ -148,7 +158,7 @@
     .lead {
       max-width: 720px;
       color: var(--muted);
-      font-size: clamp(1.04rem, 1.8vw, 1.25rem);
+      font-size: clamp(1.04rem, 1.8vw, 1.24rem);
     }
 
     .button {
@@ -163,8 +173,8 @@
       font-weight: 850;
       transition:
         transform 180ms ease,
-        background 180ms ease,
-        box-shadow 180ms ease;
+        box-shadow 180ms ease,
+        background 180ms ease;
     }
 
     .button:hover {
@@ -173,18 +183,23 @@
 
     .button-primary {
       color: var(--white);
-      background: linear-gradient(135deg, var(--navy), var(--teal));
-      box-shadow: 0 16px 40px rgba(2, 170, 167, 0.23);
+      background:
+        linear-gradient(
+          135deg,
+          var(--navy),
+          var(--teal)
+        );
+      box-shadow: 0 16px 40px rgba(0, 170, 167, 0.23);
     }
 
     .button-primary:hover {
-      box-shadow: 0 19px 46px rgba(2, 170, 167, 0.32);
+      box-shadow: 0 20px 48px rgba(0, 170, 167, 0.32);
     }
 
     .button-secondary {
       border-color: var(--border);
       color: var(--navy);
-      background: rgba(255, 255, 255, 0.86);
+      background: rgba(255, 255, 255, 0.89);
     }
 
     .button-light {
@@ -198,8 +213,8 @@
       top: 0;
       right: 0;
       left: 0;
-      border-bottom: 1px solid rgba(7, 31, 69, 0.08);
-      background: rgba(255, 255, 255, 0.9);
+      border-bottom: 1px solid rgba(6, 31, 69, 0.07);
+      background: rgba(255, 255, 255, 0.91);
       backdrop-filter: blur(18px);
     }
 
@@ -208,7 +223,7 @@
       min-height: 82px;
       align-items: center;
       justify-content: space-between;
-      gap: 26px;
+      gap: 25px;
     }
 
     .brand {
@@ -218,40 +233,40 @@
     }
 
     .brand img {
-      width: 68px;
-      height: 68px;
+      width: 67px;
+      height: 67px;
       object-fit: contain;
     }
 
-    .brand-text {
+    .brand-copy {
       line-height: 1;
     }
 
     .brand-name {
       display: block;
       color: var(--navy);
-      font-size: 1.18rem;
+      font-size: 1.15rem;
       font-weight: 900;
       letter-spacing: -0.04em;
     }
 
-    .brand-subtitle {
+    .brand-slogan {
       display: block;
       margin-top: 5px;
       color: var(--teal);
-      font-size: 0.62rem;
+      font-size: 0.58rem;
       font-weight: 900;
-      letter-spacing: 0.19em;
+      letter-spacing: 0.17em;
       text-transform: uppercase;
     }
 
     .navigation-links {
       display: flex;
       align-items: center;
-      gap: 24px;
+      gap: 23px;
       color: var(--muted);
-      font-size: 0.92rem;
-      font-weight: 750;
+      font-size: 0.91rem;
+      font-weight: 760;
     }
 
     .navigation-links > a:not(.button):hover {
@@ -271,37 +286,37 @@
     .hero {
       position: relative;
       min-height: 900px;
-      padding: 165px 0 100px;
+      padding: 160px 0 92px;
       overflow: hidden;
       background:
         radial-gradient(
-          circle at 87% 20%,
-          rgba(2, 170, 167, 0.23),
+          circle at 88% 15%,
+          rgba(0, 170, 167, 0.22),
           transparent 28%
         ),
         radial-gradient(
-          circle at 10% 80%,
-          rgba(118, 86, 217, 0.11),
-          transparent 30%
+          circle at 8% 88%,
+          rgba(121, 88, 221, 0.11),
+          transparent 31%
         ),
         linear-gradient(
           135deg,
           #ffffff 0%,
-          #eff9f8 52%,
-          #fff7f4 100%
+          #edfafa 56%,
+          #fff8f5 100%
         );
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.04fr 0.96fr;
+      grid-template-columns: 1.02fr 0.98fr;
       align-items: center;
-      gap: 60px;
+      gap: 58px;
     }
 
     .hero-copy {
       position: relative;
-      z-index: 2;
+      z-index: 3;
     }
 
     .hero-copy strong {
@@ -312,31 +327,67 @@
       display: flex;
       flex-wrap: wrap;
       gap: 14px;
-      margin: 34px 0 38px;
+      margin: 33px 0 18px;
     }
 
-    .hero-features {
+    .response-note {
       display: flex;
-      flex-wrap: wrap;
-      gap: 18px 25px;
-      color: var(--muted);
-      font-size: 0.91rem;
-      font-weight: 750;
-    }
-
-    .hero-features span {
-      display: inline-flex;
       align-items: center;
       gap: 9px;
+      margin-bottom: 31px;
+      color: var(--navy);
+      font-size: 0.9rem;
+      font-weight: 800;
     }
 
-    .hero-features span::before {
-      content: "";
-      width: 8px;
-      height: 8px;
+    .response-note::before {
+      content: "✓";
+      display: grid;
+      width: 24px;
+      height: 24px;
+      place-items: center;
       border-radius: 50%;
+      color: var(--white);
       background: var(--teal);
-      box-shadow: 0 0 0 5px rgba(2, 170, 167, 0.13);
+    }
+
+    .quality-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 11px;
+      max-width: 610px;
+    }
+
+    .quality-item {
+      display: flex;
+      min-height: 64px;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 14px;
+      border: 1px solid rgba(6, 31, 69, 0.09);
+      border-radius: 16px;
+      color: var(--navy);
+      background: rgba(255, 255, 255, 0.75);
+      font-size: 0.87rem;
+      font-weight: 760;
+      box-shadow: 0 8px 20px rgba(6, 31, 69, 0.04);
+    }
+
+    .quality-icon {
+      display: grid;
+      width: 36px;
+      height: 36px;
+      flex: 0 0 36px;
+      place-items: center;
+      border-radius: 11px;
+      color: var(--navy);
+      background:
+        linear-gradient(
+          135deg,
+          rgba(0, 170, 167, 0.2),
+          rgba(121, 88, 221, 0.16)
+        );
+      font-size: 1rem;
     }
 
     .hero-visual {
@@ -344,105 +395,239 @@
       min-height: 620px;
     }
 
-    .hero-image {
+    .hero-room {
       position: absolute;
-      inset: 65px 0 0 45px;
-      border-radius: 42px;
-      background:
-        linear-gradient(
-          180deg,
-          rgba(7, 31, 69, 0),
-          rgba(7, 31, 69, 0.36)
-        ),
-        url("https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1400&q=88")
-        center / cover;
+      inset: 30px 0 15px 35px;
+      overflow: hidden;
+      border-radius: 40px;
       box-shadow: var(--shadow);
+    }
+
+    .hero-room-before,
+    .hero-room-after {
+      position: absolute;
+      inset: 0;
+      background-position: center;
+      background-size: cover;
+    }
+
+    .hero-room-before {
+      filter:
+        grayscale(0.3)
+        saturate(0.65)
+        brightness(0.73);
+      background-image:
+        linear-gradient(
+          rgba(15, 30, 40, 0.15),
+          rgba(15, 30, 40, 0.22)
+        ),
+        url("https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=1400&q=86");
+    }
+
+    .hero-room-before::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: 0.52;
+      background:
+        repeating-linear-gradient(
+          20deg,
+          rgba(71, 55, 38, 0.12) 0,
+          rgba(71, 55, 38, 0.12) 2px,
+          transparent 2px,
+          transparent 13px
+        );
+    }
+
+    .hero-room-after {
+      width: 0;
+      overflow: hidden;
+      border-right: 3px solid var(--white);
+      background-image:
+        linear-gradient(
+          rgba(255, 255, 255, 0.04),
+          rgba(255, 255, 255, 0.04)
+        ),
+        url("https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=1400&q=92");
+      animation: cleaningReveal 5.5s ease-in-out infinite alternate;
+    }
+
+    .hero-room-after::after {
+      content: "DEPOIS";
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      padding: 7px 11px;
+      border-radius: 999px;
+      color: var(--white);
+      background: var(--teal);
+      font-size: 0.68rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+    }
+
+    .before-label {
+      position: absolute;
+      z-index: 3;
+      top: 20px;
+      left: 20px;
+      padding: 7px 11px;
+      border-radius: 999px;
+      color: var(--white);
+      background: var(--navy);
+      font-size: 0.68rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+    }
+
+    .clean-line {
+      position: absolute;
+      z-index: 4;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 3px;
+      background: var(--white);
+      box-shadow:
+        0 0 0 5px rgba(255, 255, 255, 0.18),
+        0 0 28px rgba(255, 255, 255, 0.8);
+      animation: cleaningLine 5.5s ease-in-out infinite alternate;
     }
 
     .hero-logo-card {
       position: absolute;
-      z-index: 3;
+      z-index: 5;
       top: 0;
-      right: 12px;
-      width: min(300px, 72%);
-      padding: 20px;
-      border: 1px solid rgba(255, 255, 255, 0.85);
-      border-radius: 25px;
+      right: -10px;
+      width: 230px;
+      padding: 17px;
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      border-radius: 24px;
       background: rgba(255, 255, 255, 0.95);
-      box-shadow: 0 20px 50px rgba(7, 31, 69, 0.14);
-      backdrop-filter: blur(16px);
+      box-shadow: var(--shadow-soft);
     }
 
     .hero-logo-card img {
       width: 100%;
-      max-height: 260px;
+      max-height: 185px;
       object-fit: contain;
     }
 
-    .hero-report-card {
+    .hero-message-card {
       position: absolute;
-      z-index: 3;
-      bottom: 15px;
+      z-index: 5;
+      bottom: 0;
       left: 0;
-      width: min(320px, 80%);
+      width: min(340px, 78%);
       padding: 22px;
       border: 1px solid rgba(255, 255, 255, 0.8);
       border-radius: 22px;
       background: rgba(255, 255, 255, 0.95);
-      box-shadow: 0 20px 50px rgba(7, 31, 69, 0.14);
+      box-shadow: var(--shadow-soft);
     }
 
-    .hero-report-card small {
+    .hero-message-card small {
       display: block;
       margin-bottom: 7px;
       color: var(--teal);
-      font-size: 0.73rem;
+      font-size: 0.71rem;
       font-weight: 900;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.11em;
       text-transform: uppercase;
     }
 
-    .hero-report-card strong {
+    .hero-message-card strong {
       display: block;
       color: var(--navy);
-      font-size: 1.18rem;
-      line-height: 1.3;
+      font-size: 1.13rem;
+      line-height: 1.35;
     }
 
-    .trust-wrapper {
+    @keyframes cleaningReveal {
+      0% {
+        width: 8%;
+      }
+
+      100% {
+        width: 100%;
+      }
+    }
+
+    @keyframes cleaningLine {
+      0% {
+        left: 8%;
+      }
+
+      100% {
+        left: 100%;
+      }
+    }
+
+    .service-shortcuts {
       position: relative;
       z-index: 10;
-      margin-top: -45px;
+      margin-top: -42px;
     }
 
-    .trust-grid {
+    .shortcut-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      overflow: hidden;
+      gap: 14px;
+    }
+
+    .shortcut-card {
+      display: grid;
+      min-height: 190px;
+      align-content: space-between;
+      padding: 24px;
       border: 1px solid var(--border);
-      border-radius: var(--radius-large);
+      border-radius: 24px;
       background: var(--white);
+      box-shadow: var(--shadow-soft);
+      transition:
+        transform 180ms ease,
+        box-shadow 180ms ease;
+    }
+
+    .shortcut-card:hover {
+      transform: translateY(-6px);
       box-shadow: var(--shadow);
     }
 
-    .trust-item {
-      padding: 27px;
-      border-right: 1px solid var(--border);
-    }
-
-    .trust-item:last-child {
-      border-right: 0;
-    }
-
-    .trust-item strong {
-      display: block;
-      margin-bottom: 5px;
+    .shortcut-icon {
+      display: grid;
+      width: 50px;
+      height: 50px;
+      place-items: center;
+      border-radius: 15px;
       color: var(--navy);
+      background: rgba(0, 170, 167, 0.12);
+      font-size: 1.35rem;
     }
 
-    .trust-item span {
+    .shortcut-card:nth-child(2) .shortcut-icon {
+      background: rgba(121, 88, 221, 0.13);
+    }
+
+    .shortcut-card:nth-child(3) .shortcut-icon {
+      background: rgba(255, 105, 109, 0.13);
+    }
+
+    .shortcut-card:nth-child(4) .shortcut-icon {
+      background: rgba(19, 168, 102, 0.13);
+    }
+
+    .shortcut-card p {
+      margin-bottom: 0;
       color: var(--muted);
       font-size: 0.9rem;
+    }
+
+    .shortcut-link {
+      margin-top: 16px;
+      color: var(--teal);
+      font-size: 0.86rem;
+      font-weight: 850;
     }
 
     .section-heading {
@@ -450,11 +635,130 @@
       align-items: end;
       justify-content: space-between;
       gap: 40px;
-      margin-bottom: 45px;
+      margin-bottom: 46px;
     }
 
     .section-heading .lead {
       max-width: 525px;
+    }
+
+    .transformation {
+      background:
+        linear-gradient(
+          135deg,
+          #f5fbfb,
+          #ffffff
+        );
+    }
+
+    .transformation-grid {
+      display: grid;
+      grid-template-columns: 0.72fr 1.28fr;
+      align-items: center;
+      gap: 50px;
+    }
+
+    .transformation-copy p {
+      color: var(--muted);
+    }
+
+    .before-after {
+      position: relative;
+      height: 500px;
+      overflow: hidden;
+      border-radius: var(--large);
+      box-shadow: var(--shadow);
+      user-select: none;
+    }
+
+    .before-image,
+    .after-image {
+      position: absolute;
+      inset: 0;
+      background-position: center;
+      background-size: cover;
+    }
+
+    .before-image {
+      filter:
+        saturate(0.75)
+        brightness(0.78);
+      background-image:
+        linear-gradient(
+          rgba(35, 26, 18, 0.12),
+          rgba(35, 26, 18, 0.2)
+        ),
+        url("https://images.unsplash.com/photo-1556912173-3bb406ef7e77?auto=format&fit=crop&w=1400&q=82");
+    }
+
+    .after-image {
+      width: 50%;
+      overflow: hidden;
+      border-right: 3px solid var(--white);
+      background-image:
+        url("https://images.unsplash.com/photo-1556912173-3bb406ef7e77?auto=format&fit=crop&w=1400&q=94");
+    }
+
+    .slider-line {
+      position: absolute;
+      z-index: 3;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 3px;
+      background: var(--white);
+      transform: translateX(-50%);
+      pointer-events: none;
+    }
+
+    .slider-handle {
+      position: absolute;
+      z-index: 4;
+      top: 50%;
+      left: 50%;
+      display: grid;
+      width: 52px;
+      height: 52px;
+      place-items: center;
+      border: 4px solid var(--white);
+      border-radius: 50%;
+      color: var(--white);
+      background: var(--navy);
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .slider-input {
+      position: absolute;
+      z-index: 5;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      cursor: ew-resize;
+    }
+
+    .image-label {
+      position: absolute;
+      z-index: 6;
+      top: 20px;
+      padding: 7px 11px;
+      border-radius: 999px;
+      color: var(--white);
+      font-size: 0.68rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+    }
+
+    .image-label.before {
+      left: 20px;
+      background: var(--navy);
+    }
+
+    .image-label.after {
+      right: 20px;
+      background: var(--teal);
     }
 
     .services {
@@ -480,337 +784,195 @@
     .service-tab.active {
       border-color: var(--navy);
       color: var(--white);
-      background: linear-gradient(135deg, var(--navy), var(--teal));
+      background:
+        linear-gradient(
+          135deg,
+          var(--navy),
+          var(--teal)
+        );
     }
 
     .service-panel {
       display: none;
-      grid-template-columns: 0.84fr 1.16fr;
+      grid-template-columns: 0.72fr 1.28fr;
       gap: 38px;
-      padding: 36px;
+      padding: 34px;
       border: 1px solid var(--border);
-      border-radius: var(--radius-large);
-      background: var(--light);
+      border-radius: var(--large);
+      background: var(--soft);
     }
 
     .service-panel.active {
       display: grid;
     }
 
-    .service-introduction {
-      padding: 16px;
+    .service-intro {
+      padding: 15px;
     }
 
-    .service-introduction p {
+    .service-intro p {
       color: var(--muted);
     }
 
-    .service-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
+    .service-benefit {
+      margin: 24px 0;
+      padding: 19px;
+      border-left: 4px solid var(--teal);
+      border-radius: 0 15px 15px 0;
+      color: var(--navy);
+      background: var(--white);
+      font-size: 1.02rem;
+      font-weight: 760;
     }
 
-    .service-card {
-      padding: 22px;
-      border: 1px solid rgba(7, 31, 69, 0.09);
-      border-radius: var(--radius-medium);
+    .service-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .service-item {
+      padding: 20px;
+      border: 1px solid rgba(6, 31, 69, 0.09);
+      border-radius: var(--medium);
       background: var(--white);
       transition:
         transform 180ms ease,
         box-shadow 180ms ease;
     }
 
-    .service-card:hover {
+    .service-item:hover {
       transform: translateY(-4px);
-      box-shadow: 0 16px 36px rgba(7, 31, 69, 0.09);
+      box-shadow: 0 15px 34px rgba(6, 31, 69, 0.08);
     }
 
-    .service-number {
-      display: grid;
-      width: 43px;
-      height: 43px;
-      place-items: center;
-      margin-bottom: 15px;
-      border-radius: 13px;
-      color: var(--navy);
-      background:
-        linear-gradient(
-          135deg,
-          rgba(2, 170, 167, 0.19),
-          rgba(118, 86, 217, 0.13)
-        );
-      font-weight: 900;
-    }
-
-    .service-card p {
+    .service-item p {
       margin-bottom: 0;
       color: var(--muted);
-      font-size: 0.93rem;
-    }
-
-    .standards {
-      color: var(--white);
-      background:
-        linear-gradient(
-          135deg,
-          rgba(7, 31, 69, 0.98),
-          rgba(0, 100, 111, 0.96)
-        );
-    }
-
-    .standards h2,
-    .standards h3 {
-      color: var(--white);
-    }
-
-    .standards .eyebrow {
-      color: var(--aqua);
-    }
-
-    .standards .lead {
-      color: rgba(255, 255, 255, 0.72);
-    }
-
-    .standards-grid {
-      display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      align-items: center;
-      gap: 65px;
-    }
-
-    .standard-list {
-      display: grid;
-      gap: 14px;
-    }
-
-    .standard-item {
-      display: grid;
-      grid-template-columns: 48px 1fr;
-      gap: 16px;
-      padding: 18px;
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      border-radius: var(--radius-medium);
-      background: rgba(255, 255, 255, 0.07);
-    }
-
-    .standard-icon {
-      display: grid;
-      height: 48px;
-      place-items: center;
-      border-radius: 14px;
-      color: var(--navy);
-      background: linear-gradient(135deg, var(--aqua), #8be3d6);
-      font-weight: 900;
-    }
-
-    .standard-item p {
-      margin-bottom: 0;
-      color: rgba(255, 255, 255, 0.69);
       font-size: 0.91rem;
     }
 
-    .plans {
-      background: var(--off-white);
-    }
-
-    .plan-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .plan-card {
-      position: relative;
-      padding: 30px;
-      border: 1px solid var(--border);
-      border-radius: var(--radius-large);
-      background: var(--white);
-    }
-
-    .plan-card.featured {
-      color: var(--white);
-      background: linear-gradient(150deg, var(--navy), #006f78);
-      box-shadow: var(--shadow);
-      transform: translateY(-12px);
-    }
-
-    .plan-card.featured h3 {
-      color: var(--white);
-    }
-
-    .plan-badge {
-      position: absolute;
-      top: 18px;
-      right: 18px;
-      padding: 6px 10px;
-      border-radius: 999px;
-      color: var(--navy);
-      background: var(--aqua);
-      font-size: 0.7rem;
-      font-weight: 900;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .plan-card p,
-    .plan-card li {
-      color: var(--muted);
-    }
-
-    .plan-card.featured p,
-    .plan-card.featured li {
-      color: rgba(255, 255, 255, 0.74);
-    }
-
-    .plan-card ul {
-      padding: 0;
-      margin: 24px 0 0;
-      list-style: none;
-    }
-
-    .plan-card li {
-      position: relative;
-      padding: 9px 0 9px 26px;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .plan-card.featured li {
-      border-color: rgba(255, 255, 255, 0.13);
-    }
-
-    .plan-card li::before {
+    .service-item::before {
       content: "✓";
-      position: absolute;
-      left: 0;
-      color: var(--teal);
+      display: grid;
+      width: 33px;
+      height: 33px;
+      place-items: center;
+      margin-bottom: 13px;
+      border-radius: 10px;
+      color: var(--white);
+      background:
+        linear-gradient(
+          135deg,
+          var(--teal),
+          var(--purple)
+        );
       font-weight: 900;
     }
 
-    .plan-card.featured li::before {
+    .programs {
+      background:
+        linear-gradient(
+          135deg,
+          var(--navy),
+          #006f78
+        );
+      color: var(--white);
+    }
+
+    .programs h2,
+    .programs h3 {
+      color: var(--white);
+    }
+
+    .programs .eyebrow {
       color: var(--aqua);
     }
 
-    .reviews {
-      background: var(--white);
+    .programs .lead {
+      color: rgba(255, 255, 255, 0.72);
     }
 
-    .review-notice {
-      margin-bottom: 24px;
-      padding: 14px 18px;
-      border: 1px solid rgba(255, 104, 104, 0.25);
-      border-radius: 14px;
-      color: #793c3c;
-      background: #fff6f5;
-      font-size: 0.86rem;
-    }
-
-    .review-grid {
+    .program-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
+      gap: 18px;
     }
 
-    .review-card {
+    .program-card {
+      min-height: 260px;
       padding: 27px;
-      border: 1px solid var(--border);
-      border-radius: var(--radius-large);
-      background:
-        linear-gradient(
-          145deg,
-          #ffffff,
-          #f4fbfa
-        );
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: var(--large);
+      background: rgba(255, 255, 255, 0.07);
     }
 
-    .review-card:nth-child(2) {
-      background:
-        linear-gradient(
-          145deg,
-          #ffffff,
-          #f6f2ff
-        );
+    .program-card p {
+      color: rgba(255, 255, 255, 0.7);
     }
 
-    .review-card:nth-child(3) {
-      background:
-        linear-gradient(
-          145deg,
-          #ffffff,
-          #fff3f1
-        );
-    }
-
-    .stars {
-      margin-bottom: 18px;
-      color: #f5a623;
-      font-size: 1.08rem;
-      letter-spacing: 0.11em;
-    }
-
-    .review-text {
-      color: var(--navy);
-      font-size: 1.13rem;
-      font-weight: 700;
-      line-height: 1.55;
-    }
-
-    .review-author {
-      margin-top: 22px;
-      color: var(--muted);
-      font-size: 0.89rem;
-    }
-
-    .sample-label {
-      display: inline-flex;
-      margin-top: 18px;
-      padding: 5px 8px;
-      border-radius: 999px;
-      color: #7a4242;
-      background: #ffe9e7;
-      font-size: 0.65rem;
-      font-weight: 900;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .benefits {
-      background: var(--light);
-    }
-
-    .benefit-grid {
+    .program-icon {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .benefit-card {
-      min-height: 310px;
-      padding: 29px;
-      border: 1px solid var(--border);
-      border-radius: var(--radius-large);
-      background: linear-gradient(145deg, #ffffff, #effafa);
-    }
-
-    .benefit-card:nth-child(2) {
-      background: linear-gradient(145deg, #ffffff, #f3efff);
-    }
-
-    .benefit-card:nth-child(3) {
-      background: linear-gradient(145deg, #ffffff, #fff1ee);
-    }
-
-    .benefit-card p {
-      color: var(--muted);
-    }
-
-    .impact-text {
-      margin-top: 30px;
+      width: 50px;
+      height: 50px;
+      place-items: center;
+      margin-bottom: 25px;
+      border-radius: 16px;
       color: var(--navy);
-      font-size: clamp(1.45rem, 2.7vw, 2.15rem);
-      font-weight: 850;
-      line-height: 1.23;
-      letter-spacing: -0.04em;
+      background:
+        linear-gradient(
+          135deg,
+          var(--aqua),
+          #a2e8de
+        );
+      font-size: 1.3rem;
+    }
+
+    .standards {
+      background: var(--cream);
+    }
+
+    .standard-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .standard-card {
+      padding: 23px;
+      border: 1px solid var(--border);
+      border-radius: var(--medium);
+      background: var(--white);
+      box-shadow: 0 9px 28px rgba(6, 31, 69, 0.05);
+    }
+
+    .standard-card strong {
+      display: block;
+      margin-bottom: 7px;
+      color: var(--navy);
+    }
+
+    .standard-card p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .standard-number {
+      display: grid;
+      width: 38px;
+      height: 38px;
+      place-items: center;
+      margin-bottom: 17px;
+      border-radius: 12px;
+      color: var(--white);
+      background:
+        linear-gradient(
+          135deg,
+          var(--teal),
+          var(--purple)
+        );
+      font-weight: 900;
     }
 
     .process {
@@ -824,11 +986,12 @@
     }
 
     .process-card {
+      position: relative;
       padding: 25px;
       border: 1px solid var(--border);
-      border-radius: var(--radius-medium);
+      border-radius: var(--medium);
       background: var(--white);
-      box-shadow: 0 10px 30px rgba(7, 31, 69, 0.05);
+      box-shadow: var(--shadow-soft);
     }
 
     .process-card span {
@@ -836,11 +999,136 @@
       width: 39px;
       height: 39px;
       place-items: center;
-      margin-bottom: 23px;
+      margin-bottom: 22px;
       border-radius: 50%;
       color: var(--white);
-      background: linear-gradient(135deg, var(--teal), var(--purple));
+      background:
+        linear-gradient(
+          135deg,
+          var(--teal),
+          var(--purple)
+        );
       font-weight: 900;
+    }
+
+    .process-card p {
+      margin-bottom: 0;
+      color: var(--muted);
+    }
+
+    .reviews {
+      background: var(--soft);
+    }
+
+    .review-note {
+      margin-bottom: 22px;
+      padding: 13px 16px;
+      border: 1px solid rgba(255, 105, 109, 0.21);
+      border-radius: 13px;
+      color: #7a3a3c;
+      background: #fff6f5;
+      font-size: 0.83rem;
+    }
+
+    .review-track {
+      display: grid;
+      grid-auto-columns: minmax(280px, 1fr);
+      grid-auto-flow: column;
+      gap: 16px;
+      overflow-x: auto;
+      padding: 4px 4px 18px;
+      scroll-snap-type: x mandatory;
+    }
+
+    .review-card {
+      min-height: 270px;
+      padding: 24px;
+      border: 1px solid var(--border);
+      border-radius: var(--medium);
+      background: var(--white);
+      box-shadow: 0 10px 28px rgba(6, 31, 69, 0.06);
+      scroll-snap-align: start;
+    }
+
+    .stars {
+      margin-bottom: 16px;
+      color: #f6a700;
+      letter-spacing: 0.08em;
+    }
+
+    .review-text {
+      color: var(--navy);
+      font-size: 1.03rem;
+      font-weight: 710;
+    }
+
+    .review-author {
+      margin-top: 23px;
+      color: var(--muted);
+      font-size: 0.86rem;
+    }
+
+    .sample-tag {
+      display: inline-flex;
+      margin-top: 14px;
+      padding: 5px 8px;
+      border-radius: 999px;
+      color: #814141;
+      background: #ffe8e6;
+      font-size: 0.63rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .faq {
+      background: var(--white);
+    }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: 0.72fr 1.28fr;
+      gap: 50px;
+    }
+
+    .faq-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .faq-item {
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: var(--white);
+    }
+
+    .faq-question {
+      display: flex;
+      width: 100%;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 19px 20px;
+      border: 0;
+      color: var(--navy);
+      background: transparent;
+      text-align: left;
+      font-weight: 850;
+    }
+
+    .faq-answer {
+      display: none;
+      padding: 0 20px 19px;
+      color: var(--muted);
+    }
+
+    .faq-item.open .faq-answer {
+      display: block;
+    }
+
+    .faq-item.open .faq-question span:last-child {
+      transform: rotate(45deg);
     }
 
     .contact {
@@ -848,11 +1136,9 @@
       background:
         linear-gradient(
           135deg,
-          rgba(7, 31, 69, 0.97),
-          rgba(0, 125, 129, 0.92)
-        ),
-        url("https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&w=1600&q=84")
-        center / cover;
+          rgba(6, 31, 69, 0.97),
+          rgba(0, 119, 125, 0.94)
+        );
     }
 
     .contact h2 {
@@ -865,7 +1151,7 @@
 
     .contact-grid {
       display: grid;
-      grid-template-columns: 0.8fr 1.2fr;
+      grid-template-columns: 0.78fr 1.22fr;
       align-items: start;
       gap: 55px;
     }
@@ -876,24 +1162,42 @@
 
     .contact-details {
       display: grid;
-      gap: 13px;
-      margin-top: 29px;
+      gap: 12px;
+      margin-top: 28px;
     }
 
     .contact-detail {
-      padding: 15px 17px;
+      padding: 14px 17px;
       border: 1px solid rgba(255, 255, 255, 0.15);
-      border-radius: var(--radius-small);
+      border-radius: var(--small);
       background: rgba(255, 255, 255, 0.08);
+    }
+
+    .contact-logo {
+      width: 210px;
+      margin-top: 25px;
+      padding: 12px;
+      border-radius: 20px;
+      background: var(--white);
     }
 
     .form-card {
       padding: 30px;
       border: 1px solid rgba(255, 255, 255, 0.62);
-      border-radius: var(--radius-large);
+      border-radius: var(--large);
       color: var(--text);
-      background: rgba(255, 255, 255, 0.97);
-      box-shadow: 0 28px 80px rgba(0, 0, 0, 0.19);
+      background: rgba(255, 255, 255, 0.98);
+      box-shadow: 0 28px 80px rgba(0, 0, 0, 0.2);
+    }
+
+    .form-card h3 {
+      margin-bottom: 6px;
+    }
+
+    .form-intro {
+      margin-bottom: 24px;
+      color: var(--muted);
+      font-size: 0.92rem;
     }
 
     .form-grid {
@@ -913,7 +1217,7 @@
 
     label {
       color: var(--navy);
-      font-size: 0.87rem;
+      font-size: 0.86rem;
       font-weight: 850;
     }
 
@@ -922,7 +1226,7 @@
     textarea {
       width: 100%;
       padding: 14px 15px;
-      border: 1px solid rgba(7, 31, 69, 0.17);
+      border: 1px solid rgba(6, 31, 69, 0.17);
       border-radius: 13px;
       outline: none;
       color: var(--text);
@@ -936,18 +1240,18 @@
     select:focus,
     textarea:focus {
       border-color: var(--teal);
-      box-shadow: 0 0 0 4px rgba(2, 170, 167, 0.11);
+      box-shadow: 0 0 0 4px rgba(0, 170, 167, 0.11);
     }
 
     textarea {
-      min-height: 125px;
+      min-height: 130px;
       resize: vertical;
     }
 
     .form-note {
-      margin: 14px 0 0;
+      margin: 13px 0 0;
       color: var(--muted);
-      font-size: 0.79rem;
+      font-size: 0.77rem;
     }
 
     .form-message {
@@ -960,44 +1264,44 @@
 
     .form-message.success {
       display: block;
-      color: #166147;
-      background: #dcf6e9;
+      color: #176047;
+      background: #ddf5e9;
     }
 
     .form-message.error {
       display: block;
-      color: #942f2f;
+      color: #923333;
       background: #fde5e5;
     }
 
     .footer {
-      padding: 38px 0;
+      padding: 40px 0;
       color: rgba(255, 255, 255, 0.69);
-      background: #051a39;
+      background: #041a39;
     }
 
     .footer-grid {
-      display: flex;
+      display: grid;
+      grid-template-columns: 1.1fr 1fr auto;
       align-items: center;
-      justify-content: space-between;
       gap: 30px;
     }
 
-    .footer-logo {
+    .footer-brand {
       display: flex;
       align-items: center;
       gap: 13px;
     }
 
-    .footer-logo img {
-      width: 61px;
-      height: 61px;
+    .footer-brand img {
+      width: 68px;
+      height: 68px;
       object-fit: contain;
-      border-radius: 13px;
+      border-radius: 15px;
       background: var(--white);
     }
 
-    .footer-logo strong {
+    .footer-brand strong {
       display: block;
       color: var(--white);
     }
@@ -1005,8 +1309,8 @@
     .footer-links {
       display: flex;
       flex-wrap: wrap;
-      gap: 20px;
-      font-size: 0.89rem;
+      gap: 19px;
+      font-size: 0.87rem;
     }
 
     .reveal {
@@ -1022,7 +1326,7 @@
       transform: translateY(0);
     }
 
-    @media (max-width: 980px) {
+    @media (max-width: 1000px) {
       .navigation-links {
         position: fixed;
         top: 82px;
@@ -1048,8 +1352,9 @@
       }
 
       .hero-grid,
+      .transformation-grid,
       .service-panel,
-      .standards-grid,
+      .faq-grid,
       .contact-grid {
         grid-template-columns: 1fr;
       }
@@ -1058,98 +1363,92 @@
         min-height: auto;
       }
 
-      .hero-visual {
-        min-height: 570px;
-      }
-
-      .trust-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .trust-item:nth-child(2) {
-        border-right: 0;
-      }
-
-      .trust-item:nth-child(-n + 2) {
-        border-bottom: 1px solid var(--border);
-      }
-
-      .plan-grid,
-      .review-grid,
-      .benefit-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .plan-card.featured {
-        transform: none;
-      }
-
+      .shortcut-grid,
+      .standard-grid,
       .process-grid {
         grid-template-columns: repeat(2, 1fr);
+      }
+
+      .program-grid {
+        grid-template-columns: 1fr;
       }
 
       .section-heading {
         align-items: flex-start;
         flex-direction: column;
       }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     @media (max-width: 680px) {
       section {
-        padding: 80px 0;
+        padding: 78px 0;
+      }
+
+      h1 {
+        font-size: clamp(2.75rem, 15vw, 4.1rem);
       }
 
       .brand img {
-        width: 56px;
-        height: 56px;
+        width: 54px;
+        height: 54px;
       }
 
       .brand-name {
-        font-size: 1rem;
+        font-size: 0.98rem;
       }
 
-      .brand-subtitle {
-        font-size: 0.54rem;
+      .brand-slogan {
+        font-size: 0.5rem;
       }
 
       .hero {
-        padding-top: 135px;
+        padding-top: 132px;
       }
 
       .hero-grid {
         gap: 38px;
       }
 
-      .hero-visual {
-        min-height: 500px;
-      }
-
-      .hero-image {
-        inset: 65px 0 0 20px;
-      }
-
-      .hero-logo-card {
-        width: 225px;
-      }
-
-      .trust-wrapper {
-        margin-top: -20px;
-      }
-
-      .trust-grid,
-      .service-grid,
+      .quality-grid,
+      .shortcut-grid,
+      .service-list,
+      .standard-grid,
       .process-grid,
       .form-grid {
         grid-template-columns: 1fr;
       }
 
-      .trust-item {
-        border-right: 0;
-        border-bottom: 1px solid var(--border);
+      .hero-visual {
+        min-height: 520px;
       }
 
-      .trust-item:last-child {
-        border-bottom: 0;
+      .hero-room {
+        inset: 45px 0 30px 12px;
+      }
+
+      .hero-logo-card {
+        width: 190px;
+      }
+
+      .hero-message-card {
+        width: 255px;
+        padding: 17px;
+      }
+
+      .hero-message-card strong {
+        font-size: 0.98rem;
+      }
+
+      .service-shortcuts {
+        margin-top: -18px;
+      }
+
+      .before-after {
+        height: 370px;
       }
 
       .service-panel {
@@ -1158,11 +1457,6 @@
 
       .field.full {
         grid-column: auto;
-      }
-
-      .footer-grid {
-        align-items: flex-start;
-        flex-direction: column;
       }
     }
 
@@ -1176,6 +1470,7 @@
       *::after {
         transition-duration: 0.01ms !important;
         animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
       }
 
       .reveal {
@@ -1189,37 +1484,52 @@
 <body>
   <header class="header">
     <div class="container navigation">
-      <a class="brand" href="#top" aria-label="Pure Step Clean home">
+      <a
+        class="brand"
+        href="#inicio"
+        aria-label="Início da Pure Step Clean"
+      >
         <img
           src="purestep-logo.png"
-          alt="Pure Step Clean logo"
+          alt="Logo da Pure Step Clean"
         >
 
-        <div class="brand-text">
-          <span class="brand-name">Pure Step Clean</span>
+        <div class="brand-copy">
+          <span class="brand-name">
+            Pure Step Clean
+          </span>
 
-          <span class="brand-subtitle">
+          <span class="brand-slogan">
             Clean spaces. Better places.
           </span>
         </div>
       </a>
 
-      <nav class="navigation-links" id="navigationLinks">
-        <a href="#services">Services</a>
-        <a href="#plans">Plans</a>
-        <a href="#standards">Our Standard</a>
-        <a href="#reviews">Reviews</a>
-        <a href="#contact">Contact</a>
+      <nav
+        class="navigation-links"
+        id="navigationLinks"
+        aria-label="Navegação principal"
+      >
+        <a href="#inicio">Início</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#diferenciais">Diferenciais</a>
+        <a href="#avaliacoes">Avaliações</a>
+        <a href="#duvidas">Dúvidas</a>
+        <a href="#contato">Contato</a>
 
-        <a class="button button-primary" href="#contact">
-          Get a Free Estimate
+        <a
+          class="button button-primary"
+          href="#contato"
+        >
+          Solicitar orçamento
         </a>
       </nav>
 
       <button
         class="menu-button"
         id="menuButton"
-        aria-label="Open menu"
+        type="button"
+        aria-label="Abrir menu"
         aria-expanded="false"
       >
         ☰
@@ -1227,120 +1537,306 @@
     </div>
   </header>
 
-  <main id="top">
-    <section class="hero">
+  <main>
+    <section
+      class="hero"
+      id="inicio"
+    >
       <div class="container hero-grid">
         <div class="hero-copy reveal">
           <p class="eyebrow">
-            Premium cleaning and property care
+            Limpeza premium e cuidado com propriedades
           </p>
 
           <h1>
-            A professionally cared-for space changes
-            <strong>how people feel.</strong>
+            Mais do que limpar.
+            <strong>
+              Cuidamos do que realmente importa.
+            </strong>
           </h1>
 
           <p class="lead">
-            Pure Step Clean provides premium cleaning, organization,
-            property support, and improvement services for homes,
-            short-term rentals, and businesses.
+            A Pure Step Clean ajuda você a limpar, organizar,
+            cuidar e valorizar sua propriedade, seja ela residencial,
+            Airbnb, imóvel de curta temporada ou espaço comercial.
           </p>
 
           <div class="hero-actions">
-            <a class="button button-primary" href="#contact">
-              Request a Free Estimate
+            <a
+              class="button button-primary"
+              href="#contato"
+            >
+              Solicitar estimativa gratuita
             </a>
 
-            <a class="button button-secondary" href="#services">
-              Explore Our Services
+            <a
+              class="button button-secondary"
+              href="#servicos"
+            >
+              Explorar nossos serviços
             </a>
           </div>
 
-          <div class="hero-features">
-            <span>Trained and uniformed teams</span>
-            <span>Multilingual communication</span>
-            <span>Eco-friendly options</span>
-            <span>Detailed service reports</span>
+          <p class="response-note">
+            Receba uma resposta em até três horas úteis.
+          </p>
+
+          <div class="quality-grid">
+            <div class="quality-item">
+              <span class="quality-icon">✓</span>
+              Equipe treinada e uniformizada
+            </div>
+
+            <div class="quality-item">
+              <span class="quality-icon">◎</span>
+              Atendimento multilíngue
+            </div>
+
+            <div class="quality-item">
+              <span class="quality-icon">♻</span>
+              Opção de produtos ecológicos
+            </div>
+
+            <div class="quality-item">
+              <span class="quality-icon">▤</span>
+              Relatórios detalhados
+            </div>
+
+            <div class="quality-item">
+              <span class="quality-icon">⌚</span>
+              Agendamento flexível
+            </div>
+
+            <div class="quality-item">
+              <span class="quality-icon">◆</span>
+              Valores justos e personalizados
+            </div>
           </div>
         </div>
 
         <div class="hero-visual reveal">
-          <div class="hero-image"></div>
+          <div class="hero-room">
+            <div class="hero-room-before"></div>
+            <div class="hero-room-after"></div>
+
+            <span class="before-label">
+              ANTES
+            </span>
+
+            <div class="clean-line"></div>
+          </div>
 
           <div class="hero-logo-card">
             <img
               src="purestep-logo.png"
-              alt="Pure Step Clean professional cleaning services"
+              alt="Pure Step Clean"
             >
           </div>
 
-          <div class="hero-report-card">
-            <small>More than cleaning</small>
+          <div class="hero-message-card">
+            <small>
+              Tudo em uma única empresa
+            </small>
 
             <strong>
-              Organization, property observations, inventory support,
-              styling guidance, and practical solutions.
+              Limpeza, organização, observação da propriedade,
+              inventário, estilo, pequenos reparos e soluções práticas.
             </strong>
           </div>
         </div>
       </div>
     </section>
 
-    <div class="trust-wrapper">
-      <div class="container trust-grid reveal">
-        <div class="trust-item">
-          <strong>Residential Care</strong>
-          <span>One-time, weekly, biweekly, and monthly options.</span>
-        </div>
+    <div class="service-shortcuts">
+      <div class="container shortcut-grid">
+        <a
+          class="shortcut-card"
+          href="#residencial"
+          data-open-service="residencial"
+        >
+          <div class="shortcut-icon">⌂</div>
 
-        <div class="trust-item">
-          <strong>Airbnb Operations</strong>
-          <span>Turnovers, reports, inventory, and guest-ready setup.</span>
-        </div>
+          <div>
+            <h3>Cuidados residenciais</h3>
 
-        <div class="trust-item">
-          <strong>Commercial Cleaning</strong>
-          <span>Professional environments designed to inspire trust.</span>
-        </div>
+            <p>
+              Limpeza, organização e soluções para uma casa
+              mais leve e confortável.
+            </p>
 
-        <div class="trust-item">
-          <strong>Property Support</strong>
-          <span>Organization, setup, small repairs, and improvement plans.</span>
-        </div>
+            <div class="shortcut-link">
+              Conhecer serviços →
+            </div>
+          </div>
+        </a>
+
+        <a
+          class="shortcut-card"
+          href="#airbnb"
+          data-open-service="airbnb"
+        >
+          <div class="shortcut-icon">A</div>
+
+          <div>
+            <h3>Airbnb e temporada</h3>
+
+            <p>
+              Turnover, inventário, relatórios,
+              consultoria e suporte para anfitriões.
+            </p>
+
+            <div class="shortcut-link">
+              Conhecer serviços →
+            </div>
+          </div>
+        </a>
+
+        <a
+          class="shortcut-card"
+          href="#comercial"
+          data-open-service="comercial"
+        >
+          <div class="shortcut-icon">▦</div>
+
+          <div>
+            <h3>Limpeza comercial</h3>
+
+            <p>
+              Ambientes limpos, organizados e preparados
+              para receber clientes.
+            </p>
+
+            <div class="shortcut-link">
+              Conhecer serviços →
+            </div>
+          </div>
+        </a>
+
+        <a
+          class="shortcut-card"
+          href="#suporte"
+          data-open-service="suporte"
+        >
+          <div class="shortcut-icon">⌁</div>
+
+          <div>
+            <h3>Suporte à propriedade</h3>
+
+            <p>
+              Pequenos reparos, compras, organização,
+              descarte e apoio operacional.
+            </p>
+
+            <div class="shortcut-link">
+              Conhecer serviços →
+            </div>
+          </div>
+        </a>
       </div>
     </div>
 
-    <section class="services" id="services">
+    <section class="transformation">
+      <div class="container transformation-grid">
+        <div class="transformation-copy reveal">
+          <p class="eyebrow">
+            Resultados que você percebe
+          </p>
+
+          <h2>
+            Arraste e veja a diferença.
+          </h2>
+
+          <p class="lead">
+            Uma limpeza profissional transforma mais do que a aparência.
+            Ela devolve leveza, conforto, organização e confiança
+            para quem usa o ambiente.
+          </p>
+
+          <a
+            class="button button-primary"
+            href="#contato"
+          >
+            Quero transformar meu espaço
+          </a>
+        </div>
+
+        <div
+          class="before-after reveal"
+          id="beforeAfter"
+        >
+          <div class="before-image"></div>
+
+          <div
+            class="after-image"
+            id="afterImage"
+          ></div>
+
+          <span class="image-label before">
+            ANTES
+          </span>
+
+          <span class="image-label after">
+            DEPOIS
+          </span>
+
+          <div
+            class="slider-line"
+            id="sliderLine"
+          ></div>
+
+          <div
+            class="slider-handle"
+            id="sliderHandle"
+          >
+            ↔
+          </div>
+
+          <input
+            class="slider-input"
+            id="comparisonSlider"
+            type="range"
+            min="0"
+            max="100"
+            value="50"
+            aria-label="Comparar antes e depois"
+          >
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="services"
+      id="servicos"
+    >
       <div class="container">
         <div class="section-heading reveal">
           <div>
             <p class="eyebrow">
-              Services designed around real life
+              Equipe confiável e muitas maneiras de ajudar
             </p>
 
             <h2>
-              One trusted team. Many ways to help.
+              Soluções para cada tipo de necessidade.
             </h2>
           </div>
 
           <p class="lead">
-            Select a service category to discover how Pure Step Clean
-            can protect your time, improve your property, and create
-            a more consistent experience.
+            Selecione uma categoria e conheça os serviços
+            desenvolvidos para facilitar sua rotina,
+            proteger seu tempo e valorizar sua propriedade.
           </p>
         </div>
 
         <div
           class="service-tabs reveal"
           role="tablist"
-          aria-label="Service categories"
         >
           <button
             class="service-tab active"
-            data-tab="residential"
+            data-tab="residencial"
             type="button"
           >
-            Residential
+            Residencial
           </button>
 
           <button
@@ -1353,441 +1849,478 @@
 
           <button
             class="service-tab"
-            data-tab="commercial"
+            data-tab="comercial"
             type="button"
           >
-            Commercial
+            Comercial
           </button>
 
           <button
             class="service-tab"
-            data-tab="support"
+            data-tab="suporte"
             type="button"
           >
-            Property Support
+            Suporte à propriedade
           </button>
         </div>
 
-        <div class="service-panel active reveal" id="residential">
-          <div class="service-introduction">
-            <p class="eyebrow">Residential</p>
-
-            <h3>
-              Come home to calm, not another task list.
-            </h3>
-
-            <p>
-              Our residential service is designed for people who value
-              consistency, comfort, and dependable care. Choose conventional
-              or eco-conscious products and select the schedule that works
-              best for your household.
-            </p>
-
-            <a class="button button-primary" href="#contact">
-              Request Residential Service
-            </a>
-          </div>
-
-          <div class="service-grid">
-            <article class="service-card">
-              <div class="service-number">01</div>
-
-              <h3>One-Time Cleaning</h3>
-
-              <p>
-                A focused reset before guests, celebrations, seasonal
-                changes, or whenever your home needs extra attention.
-              </p>
-            </article>
-
-            <article class="service-card">
-              <div class="service-number">02</div>
-
-              <h3>Standard Cleaning</h3>
-
-              <p>
-                Essential maintenance for frequently used rooms,
-                kitchens, bathrooms, floors, and high-touch surfaces.
-              </p>
-            </article>
-
-            <article class="service-card">
-              <div class="service-number">03</div>
-
-              <h3>Deep Cleaning</h3>
-
-              <p>
-                Detailed top-to-bottom care for buildup, overlooked areas,
-                baseboards, fixtures, and hard-to-reach surfaces.
-              </p>
-            </article>
-
-            <article class="service-card">
-              <div class="service-number">04</div>
-
-              <h3>Recurring Cleaning</h3>
-
-              <p>
-                Weekly, biweekly, or monthly service designed to maintain
-                a consistent standard and protect your routine.
-              </p>
-            </article>
-
-            <article class="service-card">
-              <div class="service-number">05</div>
-
-              <h3>Home Organization</h3>
-
-              <p>
-                Practical systems for kitchens, closets, storage areas,
-                and everyday spaces that need to function more efficiently.
-              </p>
-            </article>
-
-            <article class="service-card">
-              <div class="service-number">06</div>
-
-              <h3>Home Refresh Plan</h3>
-
-              <p>
-                Send photos and videos or request an in-person visit.
-                Receive a customized improvement plan within five
-                business days.
-              </p>
-            </article>
-
-            <article class="service-card">
-              <div class="service-number">07</div>
-
-              <h3>Move-In and Move-Out</h3>
-
-              <p>
-                Detailed cleaning and organization support for a more
-                comfortable arrival or a cleaner property transition.
-              </p>
-            </article>
-
-            <article class="service-card">
-              <div class="service-number">08</div>
-
-              <h3>Welcome and Referral Benefits</h3>
-
-              <p>
-                Qualifying recurring clients can receive a welcome kit
-                and access to the Pure Step referral rewards program.
-              </p>
-            </article>
-          </div>
-        </div>
-
-        <div class="service-panel reveal" id="airbnb">
-          <div class="service-introduction">
+        <div
+          class="service-panel active reveal"
+          id="residencial"
+        >
+          <div class="service-intro">
             <p class="eyebrow">
-              Airbnb and short-term rentals
+              Cuidados residenciais
             </p>
 
             <h3>
-              Protect the guest experience before check-in begins.
+              Sua casa deve ser o lugar onde você mais gosta de estar.
             </h3>
 
             <p>
-              We help hosts maintain a reliable, guest-ready standard
-              through structured turnovers, condition reporting,
-              inventory oversight, setup support, and property
-              improvement services.
+              Uma casa limpa e organizada ajuda a reduzir o estresse,
+              melhora a sensação de conforto, economiza tempo
+              e torna a rotina mais leve.
             </p>
 
-            <a class="button button-primary" href="#contact">
-              Request Airbnb Support
+            <div class="service-benefit">
+              Menos tarefas acumuladas. Mais tempo para sua família,
+              seu descanso e aquilo que realmente importa.
+            </div>
+
+            <a
+              class="button button-primary"
+              href="#contato"
+            >
+              Solicitar serviço residencial
             </a>
           </div>
 
-          <div class="service-grid">
-            <article class="service-card">
-              <div class="service-number">01</div>
-
-              <h3>Turnover Cleaning</h3>
+          <div class="service-list">
+            <article class="service-item">
+              <h3>Limpeza única</h3>
 
               <p>
-                Guest-ready cleaning, bed setup, bathroom reset,
-                kitchen care, and a final visual inspection.
+                Para ocasiões especiais, visitas, festas,
+                mudanças de estação ou quando sua casa
+                precisa de uma atenção profissional.
               </p>
             </article>
 
-            <article class="service-card">
-              <div class="service-number">02</div>
-
-              <h3>Before-and-After Reports</h3>
+            <article class="service-item">
+              <h3>Limpeza padrão</h3>
 
               <p>
-                Photo documentation, visible damage notes,
-                missing-item alerts, and property observations.
+                Manutenção dos principais ambientes,
+                incluindo cozinha, banheiros, pisos,
+                quartos e superfícies de uso frequente.
               </p>
             </article>
 
-            <article class="service-card">
-              <div class="service-number">03</div>
-
-              <h3>Deep Clean and Reset</h3>
+            <article class="service-item">
+              <h3>Limpeza profunda</h3>
 
               <p>
-                Periodic intensive cleaning designed to restore the
-                property beyond the regular turnover checklist.
+                Cuidado detalhado com rodapés, cantos,
+                áreas esquecidas, superfícies, rejuntes,
+                portas, janelas e pontos de maior acúmulo.
               </p>
             </article>
 
-            <article class="service-card">
-              <div class="service-number">04</div>
-
-              <h3>Linen and Inventory Review</h3>
+            <article class="service-item">
+              <h3>Limpeza recorrente</h3>
 
               <p>
-                Inspection of towels, sheets, amenities, stains,
-                wear, supplies, and replacement needs.
+                Atendimento semanal, quinzenal ou mensal
+                para manter um padrão constante
+                sem sobrecarregar sua rotina.
               </p>
             </article>
 
-            <article class="service-card">
-              <div class="service-number">05</div>
-
-              <h3>Stock Organization</h3>
+            <article class="service-item">
+              <h3>Organização de armários</h3>
 
               <p>
-                Clear organization of linen closets, guest supplies,
-                cleaning products, amenities, and replacement inventory.
+                Organização de closets, cozinha, despensa,
+                lavanderia, rouparia, garagem
+                e espaços de armazenamento.
               </p>
             </article>
 
-            <article class="service-card">
-              <div class="service-number">06</div>
-
-              <h3>Listing Upgrade and Styling</h3>
+            <article class="service-item">
+              <h3>Plano de atualização da casa</h3>
 
               <p>
-                A practical improvement plan designed to strengthen
-                visual appeal, comfort, functionality, and perceived value.
+                Envie fotos e vídeos ou solicite uma visita.
+                Você recebe uma análise personalizada
+                de cores, disposição, organização,
+                iluminação e melhorias do ambiente.
               </p>
             </article>
 
-            <article class="service-card">
-              <div class="service-number">07</div>
-
-              <h3>Professional Photography</h3>
+            <article class="service-item">
+              <h3>Move-in e move-out</h3>
 
               <p>
-                Following an approved refresh, request professional photos
-                to update your listing and improve its presentation.
+                Limpeza completa para entrada ou saída
+                de imóveis, entregas de chaves,
+                vistorias e mudanças.
               </p>
             </article>
 
-            <article class="service-card">
-              <div class="service-number">08</div>
-
-              <h3>Airbnb Launch Consulting</h3>
+            <article class="service-item">
+              <h3>Produtos ecológicos</h3>
 
               <p>
-                Support for new hosts, including setup planning,
-                shopping lists, amenities, supplies, and property readiness.
-              </p>
-            </article>
-
-            <article class="service-card">
-              <div class="service-number">09</div>
-
-              <h3>Guest-Ready Inspection</h3>
-
-              <p>
-                A final review of presentation, supplies, linens,
-                lighting, comfort, and visible maintenance concerns.
-              </p>
-            </article>
-
-            <article class="service-card">
-              <div class="service-number">10</div>
-
-              <h3>Property Coordination</h3>
-
-              <p>
-                Ongoing coordination for recurring operational needs,
-                service appointments, property observations, and
-                owner communication.
+                Escolha entre produtos convencionais
+                ou opções ecológicas, de acordo
+                com suas necessidades e preferências.
               </p>
             </article>
           </div>
         </div>
 
-        <div class="service-panel reveal" id="commercial">
-          <div class="service-introduction">
-            <p class="eyebrow">Commercial</p>
+        <div
+          class="service-panel reveal"
+          id="airbnb"
+        >
+          <div class="service-intro">
+            <p class="eyebrow">
+              Airbnb e imóveis de temporada
+            </p>
 
             <h3>
-              Your environment speaks before your team does.
+              Mais reservas começam com uma apresentação melhor.
             </h3>
 
             <p>
-              We help offices, clinics, studios, retail spaces,
-              and service businesses create clean, organized
-              environments that support trust, professionalism,
-              and customer retention.
+              Cuidamos do imóvel entre uma hospedagem e outra,
+              observando limpeza, conforto, inventário,
+              conservação e apresentação.
             </p>
 
-            <a class="button button-primary" href="#contact">
-              Request Commercial Service
+            <div class="service-benefit">
+              Uma propriedade bem cuidada ajuda a proteger avaliações,
+              justificar valores e aumentar a confiança do hóspede.
+            </div>
+
+            <a
+              class="button button-primary"
+              href="#contato"
+            >
+              Solicitar suporte para Airbnb
             </a>
           </div>
 
-          <div class="service-grid">
-            <article class="service-card">
-              <div class="service-number">01</div>
-
-              <h3>Routine Commercial Cleaning</h3>
+          <div class="service-list">
+            <article class="service-item">
+              <h3>Limpeza turnover</h3>
 
               <p>
-                Customized schedules for offices, clinics, studios,
-                common areas, restrooms, and customer-facing spaces.
+                Limpeza entre hóspedes, organização das camas,
+                revisão de banheiros, cozinha, pisos,
+                superfícies e apresentação final.
               </p>
             </article>
 
-            <article class="service-card">
-              <div class="service-number">02</div>
-
-              <h3>Commercial Deep Cleaning</h3>
+            <article class="service-item">
+              <h3>Relatório antes e depois</h3>
 
               <p>
-                Detailed resets for seasonal needs, openings,
-                transitions, inspections, and high-traffic environments.
+                Em até 24 horas, o proprietário recebe fotos,
+                observações, informações sobre danos,
+                itens faltantes e condições do imóvel.
               </p>
             </article>
 
-            <article class="service-card">
-              <div class="service-number">03</div>
-
-              <h3>Presentation Audit</h3>
+            <article class="service-item">
+              <h3>Deep clean e redefinição</h3>
 
               <p>
-                A review of the customer-facing environment, including
-                cleanliness, organization, comfort, and visual consistency.
+                Limpeza profunda para imóveis que recebem
+                apenas turnove​rs frequentes, incluindo rodapés,
+                janelas, rejuntes e pontos negligenciados.
               </p>
             </article>
 
-            <article class="service-card">
-              <div class="service-number">04</div>
-
-              <h3>Customer Experience Plan</h3>
+            <article class="service-item">
+              <h3>Revisão de enxoval</h3>
 
               <p>
-                Practical recommendations to improve the physical
-                client journey and support repeat business.
+                Avaliação de lençóis, toalhas, travesseiros,
+                manchas, desgaste e itens que precisam
+                ser substituídos.
               </p>
             </article>
 
-            <article class="service-card">
-              <div class="service-number">05</div>
-
-              <h3>Supply and Inventory Support</h3>
+            <article class="service-item">
+              <h3>Inventário e reposição</h3>
 
               <p>
-                Monitoring of consumables, cleaning supplies,
-                customer amenities, and restocking needs.
+                Organização e controle de amenities,
+                produtos, utensílios e itens de reposição.
+                Também realizamos compras mediante aprovação.
               </p>
             </article>
 
-            <article class="service-card">
-              <div class="service-number">06</div>
-
-              <h3>Post-Service Reports</h3>
+            <article class="service-item">
+              <h3>Atualização de estilo</h3>
 
               <p>
-                Clear documentation of completed work, property
-                observations, and recommended follow-up.
+                Sugestões para tornar o imóvel mais funcional,
+                agradável, fotogênico e coerente
+                com o perfil dos hóspedes.
+              </p>
+            </article>
+
+            <article class="service-item">
+              <h3>Fotografia profissional</h3>
+
+              <p>
+                Após a atualização do imóvel,
+                podemos coordenar novas fotos
+                para melhorar a apresentação do anúncio.
+              </p>
+            </article>
+
+            <article class="service-item">
+              <h3>Consultoria para novos anfitriões</h3>
+
+              <p>
+                Acompanhamento desde o início,
+                com lista de compras, organização,
+                enxoval, amenities, decoração e preparação.
+              </p>
+            </article>
+
+            <article class="service-item">
+              <h3>Inspeção pré-hóspede</h3>
+
+              <p>
+                Revisão final de limpeza, camas,
+                itens essenciais, iluminação,
+                conforto e apresentação.
+              </p>
+            </article>
+
+            <article class="service-item">
+              <h3>Gestão e coordenação</h3>
+
+              <p>
+                Apoio para serviços recorrentes,
+                manutenção, comunicação com fornecedores,
+                inspeções e observações da propriedade.
               </p>
             </article>
           </div>
         </div>
 
-        <div class="service-panel reveal" id="support">
-          <div class="service-introduction">
-            <p class="eyebrow">Property Support</p>
+        <div
+          class="service-panel reveal"
+          id="comercial"
+        >
+          <div class="service-intro">
+            <p class="eyebrow">
+              Limpeza comercial
+            </p>
 
             <h3>
-              The small things become easier when one team can handle them.
+              Seu ambiente fala antes mesmo do primeiro atendimento.
             </h3>
 
             <p>
-              Add practical support to a cleaning appointment or request
-              it separately. We coordinate everyday property tasks that
-              often take more time than expected.
+              Atendemos escritórios, lojas, clínicas,
+              estúdios, consultórios e espaços comerciais
+              em Limeira e região.
             </p>
 
-            <a class="button button-primary" href="#contact">
-              Request Property Support
+            <div class="service-benefit">
+              Ambientes limpos e organizados transmitem cuidado,
+              confiança, profissionalismo e atenção aos detalhes.
+            </div>
+
+            <a
+              class="button button-primary"
+              href="#contato"
+            >
+              Solicitar limpeza comercial
             </a>
           </div>
 
-          <div class="service-grid">
-            <article class="service-card">
-              <div class="service-number">01</div>
-
-              <h3>Small Repairs and Handyman Support</h3>
+          <div class="service-list">
+            <article class="service-item">
+              <h3>Limpeza comercial recorrente</h3>
 
               <p>
-                Minor repairs, basic installations, touch-ups,
-                simple adjustments, and practical property tasks.
+                Planos personalizados para escritórios,
+                clínicas, lojas, estúdios,
+                recepções e áreas de atendimento.
               </p>
             </article>
 
-            <article class="service-card">
-              <div class="service-number">02</div>
-
-              <h3>Trash and Curb Support</h3>
+            <article class="service-item">
+              <h3>Deep clean comercial</h3>
 
               <p>
-                Trash removal, bin placement, post-stay disposal,
-                and basic exterior reset assistance.
+                Limpeza aprofundada para inaugurações,
+                mudanças, reformas, períodos sazonais
+                e ambientes de maior circulação.
               </p>
             </article>
 
-            <article class="service-card">
-              <div class="service-number">03</div>
-
-              <h3>Shopping and Property Setup</h3>
+            <article class="service-item">
+              <h3>Limpeza de vidros</h3>
 
               <p>
-                Purchasing support for household, Airbnb, office,
-                and guest-ready essentials based on an approved list.
+                Limpeza de portas, divisórias,
+                vitrines e superfícies de vidro,
+                conforme avaliação do local.
               </p>
             </article>
 
-            <article class="service-card">
-              <div class="service-number">04</div>
-
-              <h3>Organization Projects</h3>
+            <article class="service-item">
+              <h3>Organização de áreas internas</h3>
 
               <p>
-                Storage rooms, supply closets, linen areas,
-                kitchens, offices, and back-of-house organization.
+                Organização de estoques,
+                armários, copas, materiais,
+                recepções e áreas de apoio.
               </p>
             </article>
 
-            <article class="service-card">
-              <div class="service-number">05</div>
-
-              <h3>Move-In and Move-Out Support</h3>
+            <article class="service-item">
+              <h3>Análise de apresentação</h3>
 
               <p>
-                Cleaning, organization, setup, packing assistance,
-                and readiness checks for property transitions.
+                Observação da experiência visual do cliente,
+                incluindo organização, limpeza,
+                conforto e aparência do ambiente.
               </p>
             </article>
 
-            <article class="service-card">
-              <div class="service-number">06</div>
-
-              <h3>Improvement Coordination</h3>
+            <article class="service-item">
+              <h3>Plano de melhoria</h3>
 
               <p>
-                We help transform an approved property improvement plan
-                into practical next steps through sourcing and coordination.
+                Recomendações para tornar o espaço
+                mais agradável, coerente e preparado
+                para receber clientes.
+              </p>
+            </article>
+
+            <article class="service-item">
+              <h3>Controle de materiais</h3>
+
+              <p>
+                Monitoramento de produtos de limpeza,
+                itens de higiene, consumíveis
+                e necessidades de reposição.
+              </p>
+            </article>
+
+            <article class="service-item">
+              <h3>Relatório pós-serviço</h3>
+
+              <p>
+                Registro do que foi realizado,
+                observações importantes
+                e recomendações de acompanhamento.
+              </p>
+            </article>
+          </div>
+        </div>
+
+        <div
+          class="service-panel reveal"
+          id="suporte"
+        >
+          <div class="service-intro">
+            <p class="eyebrow">
+              Suporte à propriedade
+            </p>
+
+            <h3>
+              Pequenas tarefas deixam de ser um problema
+              quando uma equipe confiável pode ajudar.
+            </h3>
+
+            <p>
+              Serviços complementares podem ser adicionados
+              à limpeza ou contratados separadamente,
+              conforme disponibilidade e avaliação.
+            </p>
+
+            <div class="service-benefit">
+              Uma única empresa para cuidar
+              de diferentes necessidades do seu imóvel.
+            </div>
+
+            <a
+              class="button button-primary"
+              href="#contato"
+            >
+              Solicitar suporte
+            </a>
+          </div>
+
+          <div class="service-list">
+            <article class="service-item">
+              <h3>Pequenos reparos</h3>
+
+              <p>
+                Ajustes simples, instalações básicas,
+                montagem leve, retoques
+                e pequenas demandas do imóvel.
+              </p>
+            </article>
+
+            <article class="service-item">
+              <h3>Montagem e organização</h3>
+
+              <p>
+                Montagem de itens simples,
+                organização de ambientes,
+                estoques e áreas de apoio.
+              </p>
+            </article>
+
+            <article class="service-item">
+              <h3>Compras e reposição</h3>
+
+              <p>
+                Compra de itens essenciais,
+                produtos, materiais e amenities,
+                mediante aprovação prévia.
+              </p>
+            </article>
+
+            <article class="service-item">
+              <h3>Gestão de lixo</h3>
+
+              <p>
+                Retirada, separação,
+                descarte e apoio com lixeiras,
+                conforme a necessidade do imóvel.
+              </p>
+            </article>
+
+            <article class="service-item">
+              <h3>Inspeção de propriedade</h3>
+
+              <p>
+                Visita para observar condições gerais,
+                limpeza, manutenção, estoque
+                e possíveis necessidades.
+              </p>
+            </article>
+
+            <article class="service-item">
+              <h3>Coordenação de fornecedores</h3>
+
+              <p>
+                Apoio para acompanhar serviços,
+                entregas, manutenções
+                e profissionais autorizados.
               </p>
             </article>
           </div>
@@ -1795,329 +2328,194 @@
       </div>
     </section>
 
-    <section class="standards" id="standards">
-      <div class="container standards-grid">
-        <div class="reveal">
-          <p class="eyebrow">
-            The Pure Step standard
-          </p>
-
-          <h2>
-            Professional care should feel organized,
-            visible, and dependable.
-          </h2>
-
-          <p class="lead">
-            We do more than complete a checklist. We create a repeatable
-            service experience designed to make clients feel informed,
-            supported, and confident.
-          </p>
-        </div>
-
-        <div class="standard-list reveal">
-          <article class="standard-item">
-            <div class="standard-icon">01</div>
-
-            <div>
-              <h3>Trained and Uniformed Teams</h3>
-
-              <p>
-                A consistent professional presentation supported by
-                clear service expectations and structured checklists.
-              </p>
-            </div>
-          </article>
-
-          <article class="standard-item">
-            <div class="standard-icon">02</div>
-
-            <div>
-              <h3>Product Choice</h3>
-
-              <p>
-                Choose eco-conscious or conventional products based
-                on your preferences and the needs of the property.
-              </p>
-            </div>
-          </article>
-
-          <article class="standard-item">
-            <div class="standard-icon">03</div>
-
-            <div>
-              <h3>Detailed Reporting</h3>
-
-              <p>
-                Receive service notes and relevant observations
-                after completion, generally within 24 hours.
-              </p>
-            </div>
-          </article>
-
-          <article class="standard-item">
-            <div class="standard-icon">04</div>
-
-            <div>
-              <h3>Responsive Communication</h3>
-
-              <p>
-                Digital inquiries receive a response as quickly as possible,
-                with a target response time of up to three business hours.
-              </p>
-            </div>
-          </article>
-
-          <article class="standard-item">
-            <div class="standard-icon">05</div>
-
-            <div>
-              <h3>Multilingual Support</h3>
-
-              <p>
-                Communication designed to make coordination easier
-                for clients, owners, guests, and service teams.
-              </p>
-            </div>
-          </article>
-
-          <article class="standard-item">
-            <div class="standard-icon">06</div>
-
-            <div>
-              <h3>24/7 Request Intake</h3>
-
-              <p>
-                Clients may submit digital requests at any time.
-                Service and response availability depends on scheduling.
-              </p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="plans" id="plans">
+    <section class="programs">
       <div class="container">
         <div class="section-heading reveal">
           <div>
             <p class="eyebrow">
-              Residential recurring plans
+              Benefícios para clientes recorrentes
             </p>
 
             <h2>
-              Choose a rhythm that protects your time.
+              Quanto mais você cuida do seu espaço,
+              mais benefícios recebe.
             </h2>
           </div>
 
           <p class="lead">
-            Final pricing depends on property size, condition,
-            frequency, requested products, and service scope.
+            Nossos programas foram pensados
+            para valorizar clientes que confiam
+            na Pure Step Clean de forma recorrente.
           </p>
         </div>
 
-        <div class="plan-grid">
-          <article class="plan-card reveal">
-            <h3>Monthly Care</h3>
+        <div class="program-grid">
+          <article class="program-card reveal">
+            <div class="program-icon">🎁</div>
+
+            <h3>Programa de boas-vindas</h3>
 
             <p>
-              A reliable reset for homes that need structured
-              professional maintenance once a month.
+              Ao fechar um pacote semanal, quinzenal ou mensal,
+              o cliente pode receber um kit de boas-vindas
+              preparado pela Pure Step Clean.
             </p>
-
-            <ul>
-              <li>Monthly scheduled visit</li>
-              <li>Standard cleaning checklist</li>
-              <li>Optional eco-friendly products</li>
-              <li>Post-service notes</li>
-              <li>Welcome benefit eligibility</li>
-            </ul>
           </article>
 
-          <article class="plan-card featured reveal">
-            <span class="plan-badge">
-              Most Popular
-            </span>
+          <article class="program-card reveal">
+            <div class="program-icon">👥</div>
 
-            <h3>Biweekly Care</h3>
+            <h3>Programa de indicação</h3>
 
             <p>
-              Balanced consistency for busy households that want
-              a reliably maintained home.
+              Indique novos clientes e receba descontos,
+              bônus ou serviços complementares.
+              Dependendo do número de indicações,
+              você pode ganhar até uma deep clean.
             </p>
-
-            <ul>
-              <li>Service every two weeks</li>
-              <li>Priority recurring schedule</li>
-              <li>Product preference options</li>
-              <li>Welcome kit for qualifying plans</li>
-              <li>Referral rewards access</li>
-            </ul>
           </article>
 
-          <article class="plan-card reveal">
-            <h3>Weekly Care</h3>
+          <article class="program-card reveal">
+            <div class="program-icon">★</div>
+
+            <h3>Programa de fidelidade</h3>
 
             <p>
-              High-frequency support for active homes,
-              families, professionals, and elevated standards.
+              A cada dez limpezas residenciais concluídas,
+              o cliente pode receber desconto,
+              bônus ou um presente,
+              conforme as condições do programa.
             </p>
-
-            <ul>
-              <li>Weekly scheduled visit</li>
-              <li>Consistent maintenance rhythm</li>
-              <li>Priority communication</li>
-              <li>Welcome kit for qualifying plans</li>
-              <li>Referral rewards access</li>
-            </ul>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="reviews" id="reviews">
+    <section
+      class="standards"
+      id="diferenciais"
+    >
       <div class="container">
         <div class="section-heading reveal">
           <div>
             <p class="eyebrow">
-              Client Experiences
+              O padrão Pure Step
             </p>
 
             <h2>
-              Service people feel comfortable recommending.
+              Cuidado profissional em cada detalhe.
             </h2>
           </div>
 
           <p class="lead">
-            This section is ready for verified client reviews
-            from Google, direct feedback, or service platforms.
+            Nosso objetivo é oferecer uma experiência
+            organizada, confiável e fácil
+            do primeiro contato ao relatório final.
           </p>
         </div>
 
-        <div class="review-notice reveal">
-          The three cards below are sample placeholders for design purposes.
-          Replace them with genuine, authorized client reviews before
-          promoting them as testimonials.
-        </div>
+        <div class="standard-grid">
+          <article class="standard-card reveal">
+            <div class="standard-number">01</div>
 
-        <div class="review-grid">
-          <article class="review-card reveal">
-            <div class="stars">
-              ★★★★★
-            </div>
-
-            <p class="review-text">
-              “Pure Step Clean made the entire process easy.
-              The team arrived prepared, communicated clearly,
-              and left the property feeling completely refreshed.”
-            </p>
-
-            <p class="review-author">
-              Sample Client · Naperville, Illinois
-            </p>
-
-            <span class="sample-label">
-              Sample Review
-            </span>
-          </article>
-
-          <article class="review-card reveal">
-            <div class="stars">
-              ★★★★★
-            </div>
-
-            <p class="review-text">
-              “The quality and attention to detail were excellent.
-              The post-service report gave us confidence that our
-              short-term rental was ready for the next guest.”
-            </p>
-
-            <p class="review-author">
-              Sample Host · Schaumburg, Illinois
-            </p>
-
-            <span class="sample-label">
-              Sample Review
-            </span>
-          </article>
-
-          <article class="review-card reveal">
-            <div class="stars">
-              ★★★★★
-            </div>
-
-            <p class="review-text">
-              “Professional service, clear communication, and a fair
-              quote for the work requested. The office looked organized,
-              clean, and ready for clients.”
-            </p>
-
-            <p class="review-author">
-              Sample Business Owner · Oak Brook, Illinois
-            </p>
-
-            <span class="sample-label">
-              Sample Review
-            </span>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="benefits">
-      <div class="container">
-        <div class="section-heading reveal">
-          <div>
-            <p class="eyebrow">
-              Why thoughtful care matters
-            </p>
-
-            <h2>
-              Clean is visible. The feeling it creates is even more powerful.
-            </h2>
-          </div>
-        </div>
-
-        <div class="benefit-grid">
-          <article class="benefit-card reveal">
-            <p class="eyebrow">Residential</p>
-
-            <p class="impact-text">
-              A home that is easier to maintain gives your mind
-              fewer unfinished tasks to carry.
-            </p>
+            <strong>
+              Equipe treinada
+            </strong>
 
             <p>
-              Our goal is not only to clean the space,
-              but to make everyday life feel more manageable.
+              Profissionais orientados
+              para seguir padrões de qualidade.
             </p>
           </article>
 
-          <article class="benefit-card reveal">
-            <p class="eyebrow">Airbnb</p>
+          <article class="standard-card reveal">
+            <div class="standard-number">02</div>
 
-            <p class="impact-text">
-              Guests begin evaluating a property before
-              they put down their bags.
-            </p>
+            <strong>
+              Equipe uniformizada
+            </strong>
 
             <p>
-              Consistency, presentation, linens, supplies,
-              and clear reports help protect reviews
-              and owner confidence.
+              Apresentação profissional
+              e identificação durante o serviço.
             </p>
           </article>
 
-          <article class="benefit-card reveal">
-            <p class="eyebrow">Commercial</p>
+          <article class="standard-card reveal">
+            <div class="standard-number">03</div>
 
-            <p class="impact-text">
-              The physical environment becomes part
-              of the service your customer remembers.
-            </p>
+            <strong>
+              Suporte multilíngue
+            </strong>
 
             <p>
-              A clean and organized business can reinforce trust
-              before the first conversation begins.
+              Comunicação adaptada
+              às necessidades dos clientes.
+            </p>
+          </article>
+
+          <article class="standard-card reveal">
+            <div class="standard-number">04</div>
+
+            <strong>
+              Relatórios detalhados
+            </strong>
+
+            <p>
+              Observações, informações
+              e registros após o serviço.
+            </p>
+          </article>
+
+          <article class="standard-card reveal">
+            <div class="standard-number">05</div>
+
+            <strong>
+              Opções ecológicas
+            </strong>
+
+            <p>
+              Produtos ecológicos
+              disponíveis mediante solicitação.
+            </p>
+          </article>
+
+          <article class="standard-card reveal">
+            <div class="standard-number">06</div>
+
+            <strong>
+              Planos personalizados
+            </strong>
+
+            <p>
+              Frequência e escopo definidos
+              conforme a necessidade.
+            </p>
+          </article>
+
+          <article class="standard-card reveal">
+            <div class="standard-number">07</div>
+
+            <strong>
+              Resposta rápida
+            </strong>
+
+            <p>
+              Meta de resposta em até
+              três horas úteis.
+            </p>
+          </article>
+
+          <article class="standard-card reveal">
+            <div class="standard-number">08</div>
+
+            <strong>
+              Limeira e região
+            </strong>
+
+            <p>
+              Atendimento sujeito
+              à disponibilidade de agenda.
             </p>
           </article>
         </div>
@@ -2129,11 +2527,11 @@
         <div class="section-heading reveal">
           <div>
             <p class="eyebrow">
-              A simple process
+              Como funciona
             </p>
 
             <h2>
-              From request to reliable service.
+              Do pedido ao relatório final.
             </h2>
           </div>
         </div>
@@ -2142,84 +2540,410 @@
           <article class="process-card reveal">
             <span>1</span>
 
-            <h3>Tell Us What You Need</h3>
+            <h3>Envie sua solicitação</h3>
 
             <p>
-              Choose your property type and service,
-              then send a short message.
+              Escolha o tipo de propriedade,
+              o serviço e envie uma breve mensagem.
             </p>
           </article>
 
           <article class="process-card reveal">
             <span>2</span>
 
-            <h3>Receive a Tailored Response</h3>
+            <h3>Receba o retorno</h3>
 
             <p>
-              We review the request and respond with questions,
-              next steps, or an estimate process.
+              Nossa meta é responder
+              em até três horas úteis.
             </p>
           </article>
 
           <article class="process-card reveal">
             <span>3</span>
 
-            <h3>Confirm the Scope</h3>
+            <h3>Confirme os detalhes</h3>
 
             <p>
-              We align on timing, access, priorities,
-              products, and service expectations.
+              Alinhamos data, horário,
+              acesso, produtos e prioridades.
             </p>
           </article>
 
           <article class="process-card reveal">
             <span>4</span>
 
-            <h3>Experience the Difference</h3>
+            <h3>Receba o serviço</h3>
 
             <p>
-              Our team completes the service and communicates
-              relevant observations afterward.
+              Nossa equipe realiza o trabalho
+              e envia as observações necessárias.
             </p>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="contact" id="contact">
-      <div class="container contact-grid">
-        <div class="contact-copy reveal">
+    <section
+      class="reviews"
+      id="avaliacoes"
+    >
+      <div class="container">
+        <div class="section-heading reveal">
+          <div>
+            <p class="eyebrow">
+              Avaliações
+            </p>
+
+            <h2>
+              Confiança construída por meio de bons serviços.
+            </h2>
+          </div>
+
+          <p class="lead">
+            Esta área está pronta para receber
+            avaliações reais do Google,
+            aplicativos e clientes autorizados.
+          </p>
+        </div>
+
+        <div class="review-note reveal">
+          Os depoimentos abaixo são modelos visuais.
+          Substitua por avaliações reais e autorizadas
+          antes de divulgar esta seção como opinião de clientes.
+        </div>
+
+        <div class="review-track">
+          <article class="review-card reveal">
+            <div class="stars">
+              ★★★★★
+            </div>
+
+            <p class="review-text">
+              “A equipe foi cuidadosa,
+              organizada e muito atenciosa.
+              A casa ficou leve e extremamente limpa.”
+            </p>
+
+            <p class="review-author">
+              Avaliação real a ser adicionada · Limeira
+            </p>
+
+            <span class="sample-tag">
+              Modelo
+            </span>
+          </article>
+
+          <article class="review-card reveal">
+            <div class="stars">
+              ★★★★★
+            </div>
+
+            <p class="review-text">
+              “Gostei muito da pontualidade,
+              do cuidado com os detalhes
+              e da comunicação durante o atendimento.”
+            </p>
+
+            <p class="review-author">
+              Avaliação real a ser adicionada · Limeira
+            </p>
+
+            <span class="sample-tag">
+              Modelo
+            </span>
+          </article>
+
+          <article class="review-card reveal">
+            <div class="stars">
+              ★★★★★
+            </div>
+
+            <p class="review-text">
+              “O relatório facilitou muito
+              o gerenciamento do imóvel.
+              Recebi as informações e fotos organizadas.”
+            </p>
+
+            <p class="review-author">
+              Avaliação real a ser adicionada · Região de Limeira
+            </p>
+
+            <span class="sample-tag">
+              Modelo
+            </span>
+          </article>
+
+          <article class="review-card reveal">
+            <div class="stars">
+              ★★★★★
+            </div>
+
+            <p class="review-text">
+              “A organização dos armários
+              fez uma diferença enorme
+              na rotina da nossa família.”
+            </p>
+
+            <p class="review-author">
+              Avaliação real a ser adicionada · Limeira
+            </p>
+
+            <span class="sample-tag">
+              Modelo
+            </span>
+          </article>
+
+          <article class="review-card reveal">
+            <div class="stars">
+              ★★★★★
+            </div>
+
+            <p class="review-text">
+              “Profissionais educados,
+              serviço bem feito
+              e atendimento muito claro.”
+            </p>
+
+            <p class="review-author">
+              Avaliação real a ser adicionada · Limeira
+            </p>
+
+            <span class="sample-tag">
+              Modelo
+            </span>
+          </article>
+
+          <article class="review-card reveal">
+            <div class="stars">
+              ★★★★★
+            </div>
+
+            <p class="review-text">
+              “O espaço comercial ficou
+              mais organizado e preparado
+              para receber nossos clientes.”
+            </p>
+
+            <p class="review-author">
+              Avaliação real a ser adicionada · Limeira
+            </p>
+
+            <span class="sample-tag">
+              Modelo
+            </span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="faq"
+      id="duvidas"
+    >
+      <div class="container faq-grid">
+        <div class="reveal">
           <p class="eyebrow">
-            Request a quote
+            Perguntas frequentes
           </p>
 
           <h2>
-            Tell us what would make your property easier to manage.
+            Dúvidas antes de começar?
           </h2>
 
           <p class="lead">
-            Complete the form and our team will review your request.
-            Our target response time for digital inquiries is within
-            three business hours.
+            Veja as respostas para algumas
+            das perguntas mais comuns.
+          </p>
+        </div>
+
+        <div class="faq-list reveal">
+          <article class="faq-item">
+            <button
+              class="faq-question"
+              type="button"
+            >
+              <span>
+                A Pure Step Clean leva os produtos?
+              </span>
+
+              <span>+</span>
+            </button>
+
+            <div class="faq-answer">
+              Sim. A necessidade dos produtos
+              é alinhada antes do atendimento.
+              Também oferecemos opções ecológicas
+              mediante solicitação.
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <button
+              class="faq-question"
+              type="button"
+            >
+              <span>
+                Vocês atendem toda a região de Limeira?
+              </span>
+
+              <span>+</span>
+            </button>
+
+            <div class="faq-answer">
+              Atendemos Limeira e cidades da região,
+              conforme disponibilidade,
+              distância e tipo de serviço solicitado.
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <button
+              class="faq-question"
+              type="button"
+            >
+              <span>
+                Como funciona o orçamento?
+              </span>
+
+              <span>+</span>
+            </button>
+
+            <div class="faq-answer">
+              Você envia as informações pelo formulário.
+              Dependendo do serviço, podemos solicitar
+              fotos, vídeos ou uma visita de avaliação.
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <button
+              class="faq-question"
+              type="button"
+            >
+              <span>
+                Em quanto tempo recebo uma resposta?
+              </span>
+
+              <span>+</span>
+            </button>
+
+            <div class="faq-answer">
+              Nossa meta é responder às solicitações digitais
+              em até três horas úteis.
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <button
+              class="faq-question"
+              type="button"
+            >
+              <span>
+                Vocês fazem limpeza de Airbnb?
+              </span>
+
+              <span>+</span>
+            </button>
+
+            <div class="faq-answer">
+              Sim. Oferecemos turnover,
+              deep clean, relatórios,
+              inventário, enxoval,
+              inspeção e consultoria.
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <button
+              class="faq-question"
+              type="button"
+            >
+              <span>
+                O relatório é enviado quando?
+              </span>
+
+              <span>+</span>
+            </button>
+
+            <div class="faq-answer">
+              Quando contratado ou aplicável,
+              o relatório pode ser enviado
+              em até 24 horas após o serviço.
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <button
+              class="faq-question"
+              type="button"
+            >
+              <span>
+                Vocês fazem pequenos reparos?
+              </span>
+
+              <span>+</span>
+            </button>
+
+            <div class="faq-answer">
+              Sim, para tarefas simples
+              e previamente avaliadas.
+              Serviços técnicos especializados
+              podem exigir profissionais parceiros.
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="contact"
+      id="contato"
+    >
+      <div class="container contact-grid">
+        <div class="contact-copy reveal">
+          <p class="eyebrow">
+            Solicite seu orçamento
+          </p>
+
+          <h2>
+            Vamos cuidar do que importa para você.
+          </h2>
+
+          <p class="lead">
+            Preencha o formulário e conte brevemente
+            sobre sua necessidade.
+            Nossa meta é responder em até três horas úteis.
           </p>
 
           <div class="contact-details">
             <div class="contact-detail">
-              <strong>Email:</strong>
+              <strong>E-mail:</strong>
               hello@purestepclean.com
             </div>
 
             <div class="contact-detail">
-              <strong>Services:</strong>
-              Residential, Airbnb, commercial, organization,
-              consulting, and property support.
+              <strong>Região:</strong>
+              Limeira e cidades próximas
             </div>
 
             <div class="contact-detail">
-              <strong>Product options:</strong>
-              Eco-conscious or conventional cleaning products.
+              <strong>Serviços:</strong>
+              Residencial, Airbnb, comercial,
+              organização e suporte à propriedade
+            </div>
+
+            <div class="contact-detail">
+              <strong>Resposta:</strong>
+              Meta de retorno em até três horas úteis
             </div>
           </div>
+
+          <img
+            class="contact-logo"
+            src="purestep-logo.png"
+            alt="Pure Step Clean"
+          >
         </div>
 
         <form
@@ -2228,10 +2952,19 @@
           action="https://formspree.io/f/xljrenay"
           method="POST"
         >
+          <h3>
+            Solicite uma estimativa gratuita
+          </h3>
+
+          <p class="form-intro">
+            Envie seus dados para receber
+            as próximas orientações.
+          </p>
+
           <input
             type="hidden"
             name="_subject"
-            value="New Pure Step Clean website inquiry"
+            value="Nova solicitação pelo site Pure Step Clean"
           >
 
           <input
@@ -2245,12 +2978,12 @@
           <div class="form-grid">
             <div class="field">
               <label for="name">
-                Full Name
+                Nome completo
               </label>
 
               <input
                 id="name"
-                name="name"
+                name="nome"
                 type="text"
                 autocomplete="name"
                 required
@@ -2259,7 +2992,7 @@
 
             <div class="field">
               <label for="email">
-                Email Address
+                E-mail
               </label>
 
               <input
@@ -2273,140 +3006,155 @@
 
             <div class="field">
               <label for="phone">
-                Phone Number
+                Telefone
               </label>
 
               <input
                 id="phone"
-                name="phone"
+                name="telefone"
                 type="tel"
                 autocomplete="tel"
+                placeholder="(19) 00000-0000"
+              >
+            </div>
+
+            <div class="field">
+              <label for="city">
+                Cidade
+              </label>
+
+              <input
+                id="city"
+                name="cidade"
+                type="text"
+                placeholder="Limeira"
+                required
               >
             </div>
 
             <div class="field">
               <label for="propertyType">
-                Property Type
+                Tipo de propriedade
               </label>
 
               <select
                 id="propertyType"
-                name="property_type"
+                name="tipo_de_propriedade"
                 required
               >
                 <option value="">
-                  Select one
+                  Selecione uma opção
                 </option>
 
-                <option value="Residential">
-                  Residential
+                <option value="Residencial">
+                  Residencial
                 </option>
 
-                <option value="Airbnb / Short-Term Rental">
-                  Airbnb / Short-Term Rental
+                <option value="Airbnb ou temporada">
+                  Airbnb ou temporada
                 </option>
 
-                <option value="Commercial">
-                  Commercial
+                <option value="Comercial">
+                  Comercial
                 </option>
 
-                <option value="Property Support">
-                  Property Support
+                <option value="Suporte à propriedade">
+                  Suporte à propriedade
                 </option>
               </select>
             </div>
 
-            <div class="field full">
+            <div class="field">
               <label for="serviceType">
-                Service Requested
+                Serviço desejado
               </label>
 
               <select
                 id="serviceType"
-                name="service_requested"
+                name="servico_desejado"
                 required
               >
                 <option value="">
-                  Choose a property type first
+                  Escolha primeiro o tipo de propriedade
                 </option>
               </select>
             </div>
 
             <div class="field">
               <label for="frequency">
-                Preferred Frequency
+                Frequência desejada
               </label>
 
               <select
                 id="frequency"
-                name="frequency"
+                name="frequencia"
               >
                 <option value="">
-                  Select one
+                  Selecione uma opção
                 </option>
 
-                <option value="One-Time">
-                  One-Time
+                <option value="Única">
+                  Limpeza única
                 </option>
 
-                <option value="Weekly">
-                  Weekly
+                <option value="Semanal">
+                  Semanal
                 </option>
 
-                <option value="Biweekly">
-                  Biweekly
+                <option value="Quinzenal">
+                  Quinzenal
                 </option>
 
-                <option value="Monthly">
-                  Monthly
+                <option value="Mensal">
+                  Mensal
                 </option>
 
-                <option value="Not Sure Yet">
-                  Not Sure Yet
+                <option value="A definir">
+                  Ainda não sei
                 </option>
               </select>
             </div>
 
             <div class="field">
               <label for="products">
-                Product Preference
+                Preferência de produtos
               </label>
 
               <select
                 id="products"
-                name="product_preference"
+                name="preferencia_de_produtos"
               >
                 <option value="">
-                  Select one
+                  Selecione uma opção
                 </option>
 
-                <option value="Eco-Conscious Products">
-                  Eco-Conscious Products
+                <option value="Ecológicos">
+                  Produtos ecológicos
                 </option>
 
-                <option value="Conventional Products">
-                  Conventional Products
+                <option value="Convencionais">
+                  Produtos convencionais
                 </option>
 
-                <option value="No Preference">
-                  No Preference
+                <option value="Sem preferência">
+                  Sem preferência
                 </option>
 
-                <option value="Discuss with the Team">
-                  Discuss with the Team
+                <option value="Conversar com a equipe">
+                  Conversar com a equipe
                 </option>
               </select>
             </div>
 
             <div class="field full">
               <label for="message">
-                Short Message
+                Conte brevemente sobre sua necessidade
               </label>
 
               <textarea
                 id="message"
-                name="message"
-                placeholder="Tell us about the property, service priorities, preferred timing, and any special requests."
+                name="mensagem"
+                placeholder="Informe o tipo de imóvel, tamanho aproximado, serviço desejado, frequência e qualquer detalhe importante."
                 required
               ></textarea>
             </div>
@@ -2417,12 +3165,13 @@
                 id="submitButton"
                 type="submit"
               >
-                Send Request
+                Enviar solicitação
               </button>
 
               <p class="form-note">
-                By submitting this form, you agree to be contacted
-                regarding your service request.
+                Ao enviar, você concorda em ser contatado
+                pela equipe da Pure Step Clean
+                para tratar desta solicitação.
               </p>
 
               <div
@@ -2440,65 +3189,63 @@
 
   <footer class="footer">
     <div class="container footer-grid">
-      <div class="footer-logo">
+      <div class="footer-brand">
         <img
           src="purestep-logo.png"
-          alt="Pure Step Clean logo"
+          alt="Logo Pure Step Clean"
         >
 
         <div>
-          <strong>Pure Step Clean</strong>
+          <strong>
+            Pure Step Clean
+          </strong>
 
           <small>
-            Premium cleaning and property care.
+            Limpeza premium e cuidado com propriedades.
           </small>
         </div>
       </div>
 
       <div class="footer-links">
-        <a href="#services">
-          Services
-        </a>
-
-        <a href="#plans">
-          Plans
-        </a>
-
-        <a href="#reviews">
-          Reviews
-        </a>
-
-        <a href="#contact">
-          Request a Quote
-        </a>
-
-        <a href="mailto:hello@purestepclean.com">
-          Email Us
-        </a>
+        <a href="#inicio">Início</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#diferenciais">Diferenciais</a>
+        <a href="#avaliacoes">Avaliações</a>
+        <a href="#duvidas">Dúvidas</a>
+        <a href="#contato">Contato</a>
       </div>
 
       <small>
         © <span id="currentYear"></span>
-        Pure Step Clean. All rights reserved.
+        Pure Step Clean.
+        Todos os direitos reservados.
       </small>
     </div>
   </footer>
 
   <script>
-    const menuButton = document.getElementById("menuButton");
-    const navigationLinks = document.getElementById("navigationLinks");
+    const menuButton =
+      document.getElementById("menuButton");
+
+    const navigationLinks =
+      document.getElementById("navigationLinks");
 
     menuButton.addEventListener("click", () => {
-      const isOpen = navigationLinks.classList.toggle("open");
+      const isOpen =
+        navigationLinks.classList.toggle("open");
 
-      document.body.classList.toggle("menu-open", isOpen);
+      document.body.classList.toggle(
+        "menu-open",
+        isOpen
+      );
 
       menuButton.setAttribute(
         "aria-expanded",
         String(isOpen)
       );
 
-      menuButton.textContent = isOpen ? "✕" : "☰";
+      menuButton.textContent =
+        isOpen ? "✕" : "☰";
     });
 
     navigationLinks
@@ -2506,7 +3253,10 @@
       .forEach((link) => {
         link.addEventListener("click", () => {
           navigationLinks.classList.remove("open");
-          document.body.classList.remove("menu-open");
+
+          document.body.classList.remove(
+            "menu-open"
+          );
 
           menuButton.setAttribute(
             "aria-expanded",
@@ -2517,78 +3267,140 @@
         });
       });
 
+    const comparisonSlider =
+      document.getElementById("comparisonSlider");
+
+    const afterImage =
+      document.getElementById("afterImage");
+
+    const sliderLine =
+      document.getElementById("sliderLine");
+
+    const sliderHandle =
+      document.getElementById("sliderHandle");
+
+    comparisonSlider.addEventListener(
+      "input",
+      (event) => {
+        const value = event.target.value;
+
+        afterImage.style.width = value + "%";
+        sliderLine.style.left = value + "%";
+        sliderHandle.style.left = value + "%";
+      }
+    );
+
     const serviceTabs =
       document.querySelectorAll(".service-tab");
 
     const servicePanels =
       document.querySelectorAll(".service-panel");
 
+    function openService(serviceId) {
+      serviceTabs.forEach((tab) => {
+        tab.classList.toggle(
+          "active",
+          tab.dataset.tab === serviceId
+        );
+      });
+
+      servicePanels.forEach((panel) => {
+        panel.classList.toggle(
+          "active",
+          panel.id === serviceId
+        );
+      });
+    }
+
     serviceTabs.forEach((tab) => {
       tab.addEventListener("click", () => {
-        serviceTabs.forEach((button) => {
-          button.classList.remove("active");
-        });
+        openService(tab.dataset.tab);
+      });
+    });
 
-        servicePanels.forEach((panel) => {
-          panel.classList.remove("active");
-        });
+    document
+      .querySelectorAll("[data-open-service]")
+      .forEach((card) => {
+        card.addEventListener(
+          "click",
+          (event) => {
+            const serviceId =
+              card.dataset.openService;
 
-        tab.classList.add("active");
+            openService(serviceId);
 
-        const panel =
-          document.getElementById(tab.dataset.tab);
+            setTimeout(() => {
+              document
+                .getElementById("servicos")
+                .scrollIntoView({
+                  behavior: "smooth"
+                });
+            }, 60);
+          }
+        );
+      });
 
-        if (panel) {
-          panel.classList.add("active");
-        }
+    const faqItems =
+      document.querySelectorAll(".faq-item");
+
+    faqItems.forEach((item) => {
+      const question =
+        item.querySelector(".faq-question");
+
+      question.addEventListener("click", () => {
+        item.classList.toggle("open");
       });
     });
 
     const serviceOptions = {
-      "Residential": [
-        "One-Time Cleaning",
-        "Standard Cleaning",
-        "Deep Cleaning",
-        "Weekly Cleaning",
-        "Biweekly Cleaning",
-        "Monthly Cleaning",
-        "Home Organization",
-        "Home Refresh / Decor Upgrade Plan",
-        "Move-In / Move-Out Cleaning"
+      "Residencial": [
+        "Limpeza única",
+        "Limpeza padrão",
+        "Limpeza profunda",
+        "Limpeza semanal",
+        "Limpeza quinzenal",
+        "Limpeza mensal",
+        "Organização de armários",
+        "Plano de atualização da casa",
+        "Move-in ou move-out"
       ],
 
-      "Airbnb / Short-Term Rental": [
-        "Turnover Cleaning",
-        "Deep Clean and Property Reset",
-        "Before-and-After Reporting",
-        "Linen and Inventory Review",
-        "Stock Organization",
-        "Listing Upgrade and Styling Plan",
-        "Professional Photography",
-        "Airbnb Launch Consulting",
-        "Guest-Ready Inspection",
-        "Property Coordination / Management Support"
+      "Airbnb ou temporada": [
+        "Limpeza turnover",
+        "Deep clean",
+        "Relatório antes e depois",
+        "Revisão de enxoval",
+        "Inventário e reposição",
+        "Organização de estoque",
+        "Atualização de estilo",
+        "Fotografia profissional",
+        "Consultoria para novos anfitriões",
+        "Inspeção pré-hóspede",
+        "Gestão e coordenação"
       ],
 
-      "Commercial": [
-        "Routine Commercial Cleaning",
-        "Commercial Deep Cleaning",
-        "Office Cleaning",
-        "Clinic / Studio Cleaning",
-        "Presentation Audit",
-        "Customer Experience Improvement Plan",
-        "Supply and Inventory Support",
-        "Post-Service Reporting"
+      "Comercial": [
+        "Limpeza comercial recorrente",
+        "Deep clean comercial",
+        "Limpeza de escritório",
+        "Limpeza de clínica ou consultório",
+        "Limpeza de loja",
+        "Limpeza de vidros",
+        "Organização de áreas internas",
+        "Análise de apresentação",
+        "Plano de melhoria",
+        "Controle de materiais",
+        "Relatório pós-serviço"
       ],
 
-      "Property Support": [
-        "Small Repairs / Handyman Support",
-        "Trash and Curb Support",
-        "Shopping and Property Setup",
-        "Organization Project",
-        "Move-In / Move-Out Support",
-        "Improvement Coordination",
-        "Other Property Support"
+      "Suporte à propriedade": [
+        "Pequenos reparos",
+        "Montagem e organização",
+        "Compras e reposição",
+        "Gestão de lixo",
+        "Inspeção da propriedade",
+        "Coordenação de fornecedores",
+        "Outro suporte"
       ]
     };
 
@@ -2598,25 +3410,29 @@
     const serviceType =
       document.getElementById("serviceType");
 
-    propertyType.addEventListener("change", () => {
-      const selectedType = propertyType.value;
+    propertyType.addEventListener(
+      "change",
+      () => {
+        const selectedType =
+          propertyType.value;
 
-      serviceType.innerHTML =
-        '<option value="">Select a service</option>';
+        serviceType.innerHTML =
+          '<option value="">Selecione o serviço</option>';
 
-      const availableServices =
-        serviceOptions[selectedType] || [];
+        const availableServices =
+          serviceOptions[selectedType] || [];
 
-      availableServices.forEach((service) => {
-        const option =
-          document.createElement("option");
+        availableServices.forEach((service) => {
+          const option =
+            document.createElement("option");
 
-        option.value = service;
-        option.textContent = service;
+          option.value = service;
+          option.textContent = service;
 
-        serviceType.appendChild(option);
-      });
-    });
+          serviceType.appendChild(option);
+        });
+      }
+    );
 
     const quoteForm =
       document.getElementById("quoteForm");
@@ -2633,9 +3449,13 @@
         event.preventDefault();
 
         submitButton.disabled = true;
-        submitButton.textContent = "Sending...";
 
-        formMessage.className = "form-message";
+        submitButton.textContent =
+          "Enviando...";
+
+        formMessage.className =
+          "form-message";
+
         formMessage.textContent = "";
 
         try {
@@ -2652,29 +3472,31 @@
 
           if (!response.ok) {
             throw new Error(
-              "The form could not be submitted."
+              "Não foi possível enviar."
             );
           }
 
           quoteForm.reset();
 
           serviceType.innerHTML =
-            '<option value="">Choose a property type first</option>';
+            '<option value="">Escolha primeiro o tipo de propriedade</option>';
 
           formMessage.className =
             "form-message success";
 
           formMessage.textContent =
-            "Thank you. Your request was sent successfully. Our team will contact you soon.";
+            "Solicitação enviada com sucesso. Nossa equipe entrará em contato em breve.";
         } catch (error) {
           formMessage.className =
             "form-message error";
 
           formMessage.textContent =
-            "We could not send your request. Please try again or email hello@purestepclean.com.";
+            "Não foi possível enviar sua solicitação. Tente novamente ou envie um e-mail para hello@purestepclean.com.";
         } finally {
           submitButton.disabled = false;
-          submitButton.textContent = "Send Request";
+
+          submitButton.textContent =
+            "Enviar solicitação";
         }
       }
     );
@@ -2684,8 +3506,13 @@
         (entries) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
-              entry.target.classList.add("visible");
-              revealObserver.unobserve(entry.target);
+              entry.target.classList.add(
+                "visible"
+              );
+
+              revealObserver.unobserve(
+                entry.target
+              );
             }
           });
         },
@@ -2702,7 +3529,8 @@
 
     document.getElementById(
       "currentYear"
-    ).textContent = new Date().getFullYear();
+    ).textContent =
+      new Date().getFullYear();
   </script>
 </body>
 </html>
