@@ -2,11 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
   <meta
     name="description"
-    content="Pure Step Clean provides premium residential, Airbnb, commercial cleaning, organization and property support throughout Limeira and surrounding areas."
+    content="Pure Step Clean provides premium residential, Airbnb, commercial cleaning, organization and property support."
   >
 
   <meta name="theme-color" content="#071f45">
@@ -16,20 +20,20 @@
   <style>
     :root {
       --navy: #071f45;
-      --navy-light: #143d6b;
+      --navy-soft: #143b68;
       --teal: #00aaa7;
-      --aqua: #27c8c0;
+      --aqua: #28c8c0;
       --purple: #8057dc;
       --coral: #ff686d;
-      --green: #10a766;
+      --green: #16a66a;
       --white: #ffffff;
       --cream: #fbfaf8;
-      --soft: #f1f8f8;
+      --soft: #f2f8f8;
       --text: #18313d;
       --muted: #62747c;
       --border: rgba(7, 31, 69, 0.12);
       --shadow: 0 24px 70px rgba(7, 31, 69, 0.13);
-      --shadow-soft: 0 14px 40px rgba(7, 31, 69, 0.08);
+      --shadow-soft: 0 13px 38px rgba(7, 31, 69, 0.08);
       --radius-large: 30px;
       --radius-medium: 20px;
       --radius-small: 13px;
@@ -62,8 +66,7 @@
       overflow: hidden;
     }
 
-    img,
-    svg {
+    img {
       display: block;
       max-width: 100%;
     }
@@ -106,12 +109,12 @@
 
     h2 {
       margin-bottom: 20px;
-      font-size: clamp(2.2rem, 4.5vw, 4.15rem);
+      font-size: clamp(2.15rem, 4.4vw, 4.05rem);
     }
 
     h3 {
       margin-bottom: 10px;
-      font-size: 1.34rem;
+      font-size: 1.32rem;
     }
 
     section {
@@ -129,7 +132,7 @@
       gap: 10px;
       margin-bottom: 14px;
       color: var(--teal);
-      font-size: 0.77rem;
+      font-size: 0.76rem;
       font-weight: 900;
       letter-spacing: 0.15em;
       text-transform: uppercase;
@@ -190,7 +193,7 @@
       z-index: 1000;
       inset: 0 0 auto;
       border-bottom: 1px solid rgba(7, 31, 69, 0.07);
-      background: rgba(255, 255, 255, 0.92);
+      background: rgba(255, 255, 255, 0.93);
       backdrop-filter: blur(18px);
     }
 
@@ -205,21 +208,46 @@
     .brand {
       display: inline-flex;
       align-items: center;
-      flex: 0 0 auto;
+      gap: 12px;
     }
 
-    .brand-logo {
-      width: 185px;
-      height: auto;
-      overflow: visible;
+    .brand img {
+      width: 72px;
+      height: 72px;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 18px;
+      background: var(--white);
+    }
+
+    .brand-copy {
+      line-height: 1;
+    }
+
+    .brand-name {
+      display: block;
+      color: var(--navy);
+      font-size: 1.15rem;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+    }
+
+    .brand-slogan {
+      display: block;
+      margin-top: 5px;
+      color: var(--teal);
+      font-size: 0.57rem;
+      font-weight: 900;
+      letter-spacing: 0.17em;
+      text-transform: uppercase;
     }
 
     .navigation-links {
       display: flex;
       align-items: center;
-      gap: 23px;
+      gap: 22px;
       color: var(--muted);
-      font-size: 0.91rem;
+      font-size: 0.9rem;
       font-weight: 760;
     }
 
@@ -238,18 +266,17 @@
     }
 
     .hero {
-      position: relative;
-      min-height: 920px;
-      padding: 155px 0 100px;
+      min-height: 930px;
+      padding: 145px 0 95px;
       overflow: hidden;
       background:
         radial-gradient(
-          circle at 89% 16%,
-          rgba(0, 170, 167, 0.2),
-          transparent 28%
+          circle at 91% 17%,
+          rgba(0, 170, 167, 0.19),
+          transparent 30%
         ),
         radial-gradient(
-          circle at 7% 87%,
+          circle at 8% 88%,
           rgba(128, 87, 220, 0.1),
           transparent 31%
         ),
@@ -263,14 +290,26 @@
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 0.95fr 1.05fr;
+      grid-template-columns: 0.92fr 1.08fr;
       align-items: center;
       gap: 58px;
     }
 
+    .hero-logo-wrap {
+      display: inline-flex;
+      max-width: 410px;
+      margin-bottom: 25px;
+      padding: 10px 18px 13px;
+      border-radius: 25px;
+      background: var(--white);
+      box-shadow: var(--shadow-soft);
+    }
+
     .hero-logo {
-      width: min(470px, 95%);
-      margin-bottom: 28px;
+      width: 100%;
+      max-height: 250px;
+      object-fit: contain;
+      mix-blend-mode: multiply;
     }
 
     .hero-copy strong {
@@ -349,148 +388,52 @@
       font-size: 1rem;
     }
 
-    .hero-comparison {
+    .hero-image-card {
       position: relative;
-      min-height: 660px;
-    }
-
-    .comparison-box {
-      position: absolute;
-      inset: 20px 0 10px 20px;
+      min-height: 680px;
       overflow: hidden;
       border-radius: 40px;
-      background: #dde2e4;
       box-shadow: var(--shadow);
     }
 
-    .comparison-before,
-    .comparison-after {
-      position: absolute;
-      inset: 0;
-      background-position: center;
-      background-size: cover;
+    .hero-image-card img {
+      width: 100%;
+      height: 680px;
+      object-fit: cover;
+      object-position: center;
     }
 
-    .comparison-before {
-      background-image:
-        linear-gradient(
-          rgba(24, 25, 28, 0.32),
-          rgba(24, 25, 28, 0.35)
-        ),
-        url("https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1600&q=82");
-      filter: saturate(0.62) brightness(0.68);
-    }
-
-    .comparison-before::after {
+    .hero-image-card::after {
       content: "";
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(
-          circle at 20% 82%,
-          rgba(70, 43, 24, 0.62) 0 7%,
-          transparent 8%
-        ),
-        radial-gradient(
-          circle at 68% 78%,
-          rgba(68, 42, 24, 0.58) 0 9%,
-          transparent 10%
-        ),
-        repeating-linear-gradient(
-          18deg,
-          rgba(55, 37, 28, 0.13) 0 3px,
-          transparent 3px 22px
+        linear-gradient(
+          180deg,
+          transparent 48%,
+          rgba(7, 31, 69, 0.42)
         );
-    }
-
-    .comparison-after {
-      width: 54%;
-      overflow: hidden;
-      border-right: 3px solid var(--white);
-      background-image:
-        url("https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1600&q=94");
-    }
-
-    .comparison-line {
-      position: absolute;
-      z-index: 4;
-      top: 0;
-      bottom: 0;
-      left: 54%;
-      width: 3px;
-      background: var(--white);
-      transform: translateX(-50%);
       pointer-events: none;
     }
 
-    .comparison-handle {
+    .hero-image-message {
       position: absolute;
-      z-index: 5;
-      top: 50%;
-      left: 54%;
-      display: grid;
-      width: 56px;
-      height: 56px;
-      place-items: center;
-      border: 4px solid var(--white);
-      border-radius: 50%;
-      color: var(--white);
-      background: var(--navy);
-      transform: translate(-50%, -50%);
-      box-shadow: var(--shadow-soft);
-      pointer-events: none;
-    }
-
-    .comparison-range {
-      position: absolute;
-      z-index: 6;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      opacity: 0;
-      cursor: ew-resize;
-    }
-
-    .comparison-label {
-      position: absolute;
-      z-index: 7;
-      top: 20px;
-      padding: 7px 11px;
-      border-radius: 999px;
-      color: var(--white);
-      font-size: 0.67rem;
-      font-weight: 900;
-      letter-spacing: 0.08em;
-    }
-
-    .comparison-label.before {
-      left: 20px;
-      background: var(--navy);
-    }
-
-    .comparison-label.after {
-      right: 20px;
-      background: var(--teal);
-    }
-
-    .comparison-message {
-      position: absolute;
-      z-index: 7;
+      z-index: 2;
       right: 22px;
       bottom: 22px;
-      width: min(345px, 82%);
-      padding: 21px;
-      border: 1px solid rgba(255, 255, 255, 0.75);
-      border-radius: 21px;
+      left: 22px;
+      padding: 22px;
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      border-radius: 22px;
       color: var(--navy);
-      background: rgba(255, 255, 255, 0.95);
+      background: rgba(255, 255, 255, 0.94);
       box-shadow: var(--shadow-soft);
       backdrop-filter: blur(13px);
     }
 
-    .comparison-message small {
+    .hero-image-message small {
       display: block;
-      margin-bottom: 6px;
+      margin-bottom: 7px;
       color: var(--teal);
       font-size: 0.7rem;
       font-weight: 900;
@@ -498,8 +441,9 @@
       text-transform: uppercase;
     }
 
-    .comparison-message strong {
+    .hero-image-message strong {
       display: block;
+      font-size: 1.12rem;
       line-height: 1.34;
     }
 
@@ -555,7 +499,7 @@
     }
 
     .shortcut-card:nth-child(4) .shortcut-icon {
-      background: rgba(16, 167, 102, 0.14);
+      background: rgba(16, 166, 106, 0.14);
     }
 
     .shortcut-card p {
@@ -583,7 +527,7 @@
       max-width: 530px;
     }
 
-    .results {
+    .team-section {
       background:
         linear-gradient(
           135deg,
@@ -592,153 +536,113 @@
         );
     }
 
-    .results-grid {
+    .team-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
+      grid-template-columns: 1.05fr 0.95fr;
+      align-items: center;
+      gap: 55px;
     }
 
-    .mini-comparison {
-      position: relative;
-      height: 360px;
+    .team-image {
       overflow: hidden;
-      border-radius: 26px;
-      background: #dce2e4;
-      box-shadow: var(--shadow-soft);
+      border-radius: var(--radius-large);
+      box-shadow: var(--shadow);
     }
 
-    .mini-before,
-    .mini-after {
-      position: absolute;
-      inset: 0;
-      background-position: center;
-      background-size: cover;
-    }
-
-    .mini-before {
-      filter: saturate(0.58) brightness(0.67);
-    }
-
-    .mini-before::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(
-          circle at 25% 82%,
-          rgba(68, 42, 25, 0.56) 0 8%,
-          transparent 9%
-        ),
-        radial-gradient(
-          circle at 75% 77%,
-          rgba(65, 40, 24, 0.5) 0 8%,
-          transparent 9%
-        ),
-        repeating-linear-gradient(
-          18deg,
-          rgba(54, 38, 28, 0.1) 0 3px,
-          transparent 3px 20px
-        );
-    }
-
-    .mini-after {
-      width: 50%;
-      overflow: hidden;
-      border-right: 3px solid var(--white);
-    }
-
-    .kitchen-before {
-      background-image:
-        url("https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=1300&q=80");
-    }
-
-    .kitchen-after {
-      background-image:
-        url("https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?auto=format&fit=crop&w=1300&q=94");
-    }
-
-    .bedroom-before {
-      background-image:
-        url("https://images.unsplash.com/photo-1588046130717-0eb0c9a3ba15?auto=format&fit=crop&w=1300&q=80");
-    }
-
-    .bedroom-after {
-      background-image:
-        url("https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=1300&q=94");
-    }
-
-    .bathroom-before {
-      background-image:
-        url("https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1300&q=80");
-    }
-
-    .bathroom-after {
-      background-image:
-        url("https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?auto=format&fit=crop&w=1300&q=94");
-    }
-
-    .mini-line {
-      position: absolute;
-      z-index: 4;
-      top: 0;
-      bottom: 0;
-      left: 50%;
-      width: 3px;
-      background: var(--white);
-      transform: translateX(-50%);
-      pointer-events: none;
-    }
-
-    .mini-handle {
-      position: absolute;
-      z-index: 5;
-      top: 50%;
-      left: 50%;
-      display: grid;
-      width: 47px;
-      height: 47px;
-      place-items: center;
-      border: 3px solid var(--white);
-      border-radius: 50%;
-      color: var(--white);
-      background: var(--navy);
-      transform: translate(-50%, -50%);
-      pointer-events: none;
-    }
-
-    .mini-range {
-      position: absolute;
-      z-index: 6;
-      inset: 0;
+    .team-image img {
       width: 100%;
-      height: 100%;
-      opacity: 0;
-      cursor: ew-resize;
+      min-height: 560px;
+      object-fit: cover;
     }
 
-    .mini-label {
-      position: absolute;
-      z-index: 7;
-      bottom: 16px;
-      padding: 6px 10px;
-      border-radius: 999px;
+    .team-copy-list {
+      display: grid;
+      gap: 13px;
+      margin: 28px 0 32px;
+    }
+
+    .team-copy-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 13px;
+      padding: 16px 17px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: var(--white);
+    }
+
+    .team-copy-item span {
+      display: grid;
+      width: 32px;
+      height: 32px;
+      flex: 0 0 32px;
+      place-items: center;
+      border-radius: 10px;
       color: var(--white);
-      font-size: 0.65rem;
+      background: linear-gradient(135deg, var(--teal), var(--purple));
       font-weight: 900;
     }
 
-    .mini-label.before {
-      left: 16px;
-      background: var(--navy);
+    .team-copy-item strong {
+      display: block;
+      margin-bottom: 3px;
+      color: var(--navy);
     }
 
-    .mini-label.after {
-      right: 16px;
-      background: var(--teal);
+    .team-copy-item p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .results {
+      background: var(--white);
+    }
+
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .result-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 26px;
+      background: var(--white);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .result-card img {
+      width: 100%;
+      height: 460px;
+      object-fit: cover;
+    }
+
+    .result-content {
+      padding: 21px;
+    }
+
+    .result-content p {
+      margin-bottom: 0;
+      color: var(--muted);
+    }
+
+    .result-badge {
+      position: absolute;
+      top: 17px;
+      left: 17px;
+      padding: 7px 11px;
+      border-radius: 999px;
+      color: var(--white);
+      background: var(--navy);
+      font-size: 0.67rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
     }
 
     .services {
-      background: var(--white);
+      background: var(--soft);
     }
 
     .service-tabs {
@@ -770,7 +674,7 @@
       padding: 34px;
       border: 1px solid var(--border);
       border-radius: var(--radius-large);
-      background: var(--soft);
+      background: var(--white);
     }
 
     .service-panel.active {
@@ -791,7 +695,7 @@
       border-left: 4px solid var(--teal);
       border-radius: 0 15px 15px 0;
       color: var(--navy);
-      background: var(--white);
+      background: var(--soft);
       font-weight: 780;
     }
 
@@ -806,6 +710,7 @@
       border: 1px solid rgba(7, 31, 69, 0.09);
       border-radius: var(--radius-medium);
       background: var(--white);
+      box-shadow: 0 9px 25px rgba(7, 31, 69, 0.04);
       transition:
         transform 180ms ease,
         box-shadow 180ms ease;
@@ -837,12 +742,7 @@
 
     .programs {
       color: var(--white);
-      background:
-        linear-gradient(
-          135deg,
-          var(--navy),
-          #006f78
-        );
+      background: linear-gradient(135deg, var(--navy), #006f78);
     }
 
     .programs h2,
@@ -884,12 +784,7 @@
       margin-bottom: 24px;
       border-radius: 15px;
       color: var(--navy);
-      background:
-        linear-gradient(
-          135deg,
-          var(--aqua),
-          #a2e8de
-        );
+      background: linear-gradient(135deg, var(--aqua), #a2e8de);
       font-size: 1.25rem;
     }
 
@@ -1090,9 +985,18 @@
       background: rgba(255, 255, 255, 0.08);
     }
 
-    .contact-logo {
-      width: 260px;
+    .contact-logo-wrap {
+      display: inline-flex;
+      max-width: 280px;
       margin-top: 25px;
+      padding: 12px;
+      border-radius: 21px;
+      background: var(--white);
+    }
+
+    .contact-logo {
+      width: 100%;
+      mix-blend-mode: multiply;
     }
 
     .form-card {
@@ -1194,8 +1098,23 @@
       gap: 30px;
     }
 
-    .footer-logo {
-      width: 220px;
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .footer-brand img {
+      width: 75px;
+      height: 75px;
+      object-fit: cover;
+      border-radius: 17px;
+      background: var(--white);
+    }
+
+    .footer-brand strong {
+      display: block;
+      color: var(--white);
     }
 
     .footer-links {
@@ -1244,6 +1163,7 @@
       }
 
       .hero-grid,
+      .team-grid,
       .service-panel,
       .faq-grid,
       .contact-grid {
@@ -1276,19 +1196,24 @@
         padding: 78px 0;
       }
 
-      .brand-logo {
-        width: 155px;
+      .brand-copy {
+        display: none;
+      }
+
+      .brand img {
+        width: 58px;
+        height: 58px;
       }
 
       .hero {
-        padding-top: 135px;
+        padding-top: 125px;
       }
 
       .hero-grid {
         gap: 38px;
       }
 
-      .hero-logo {
+      .hero-logo-wrap {
         width: 100%;
       }
 
@@ -1301,27 +1226,20 @@
         grid-template-columns: 1fr;
       }
 
-      .hero-comparison {
+      .hero-image-card {
         min-height: 520px;
       }
 
-      .comparison-box {
-        inset: 20px 0 10px;
-      }
-
-      .comparison-message {
-        right: 12px;
-        bottom: 12px;
-        width: 260px;
-        padding: 16px;
+      .hero-image-card img {
+        height: 520px;
       }
 
       .shortcut-section {
         margin-top: -18px;
       }
 
-      .mini-comparison {
-        height: 340px;
+      .result-card img {
+        height: 350px;
       }
 
       .service-panel {
@@ -1357,166 +1275,22 @@
   <header class="header">
     <div class="container navigation">
       <a class="brand" href="#home" aria-label="Pure Step Clean home">
-        <svg class="brand-logo" viewBox="0 0 520 220" role="img" aria-label="Pure Step Clean logo">
-          <defs>
-            <linearGradient id="logoMainGradient" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stop-color="#00aaa7"/>
-              <stop offset="48%" stop-color="#14beb7"/>
-              <stop offset="100%" stop-color="#006879"/>
-            </linearGradient>
+        <img src="logo.jpg" alt="Pure Step Clean logo">
 
-            <linearGradient id="logoAccentGradient" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stop-color="#8057dc"/>
-              <stop offset="55%" stop-color="#b35fe0"/>
-              <stop offset="100%" stop-color="#ff686d"/>
-            </linearGradient>
+        <div class="brand-copy">
+          <span class="brand-name">Pure Step Clean</span>
 
-            <linearGradient id="logoTextGradient" x1="0" y1="0" x2="1" y2="0">
-              <stop offset="0%" stop-color="#00aaa7"/>
-              <stop offset="55%" stop-color="#5e79d9"/>
-              <stop offset="100%" stop-color="#ff686d"/>
-            </linearGradient>
-          </defs>
-
-          <g transform="translate(18,5)">
-            <path
-              d="M120 14
-                 C66 14 30 44 30 88
-                 C30 129 61 145 109 158
-                 C138 166 152 174 152 187
-                 C152 203 136 211 111 211
-                 L77 211
-                 C116 188 130 171 123 157
-                 C117 145 101 140 76 133
-                 C31 120 7 94 7 60
-                 C7 31 30 9 67 1
-                 C85 -3 104 0 120 14Z"
-              fill="url(#logoMainGradient)"
-            />
-
-            <path
-              d="M91 18
-                 C119 14 146 17 163 35
-                 L198 74
-                 L198 115
-                 L149 62
-                 C137 49 123 44 105 47Z"
-              fill="url(#logoAccentGradient)"
-            />
-
-            <path
-              d="M67 137
-                 C39 147 24 166 24 195
-                 L24 220
-                 C43 194 70 181 106 180
-                 C91 163 79 149 67 137Z"
-              fill="#9a66dc"
-            />
-
-            <path
-              d="M70 158
-                 C42 171 29 190 25 219
-                 C48 192 74 180 109 181
-                 C96 170 83 162 70 158Z"
-              fill="#5538b8"
-            />
-
-            <rect x="135" y="72" width="13" height="13" rx="2" fill="#071f45"/>
-            <rect x="153" y="72" width="13" height="13" rx="2" fill="#071f45"/>
-            <rect x="135" y="90" width="13" height="13" rx="2" fill="#071f45"/>
-            <rect x="153" y="90" width="13" height="13" rx="2" fill="#071f45"/>
-
-            <path
-              d="M-2 43
-                 L4 57
-                 L19 63
-                 L4 69
-                 L-2 84
-                 L-8 69
-                 L-23 63
-                 L-8 57Z"
-              fill="#00aaa7"
-            />
-
-            <path
-              d="M45 7
-                 L49 16
-                 L59 20
-                 L49 24
-                 L45 34
-                 L41 24
-                 L31 20
-                 L41 16Z"
-              fill="#ff686d"
-            />
-
-            <path
-              d="M23 94
-                 L27 103
-                 L37 107
-                 L27 111
-                 L23 121
-                 L19 111
-                 L9 107
-                 L19 103Z"
-              fill="#8057dc"
-            />
-          </g>
-
-          <text
-            x="208"
-            y="105"
-            fill="#071f45"
-            font-family="Arial, Helvetica, sans-serif"
-            font-size="59"
-            font-weight="300"
-            letter-spacing="-3"
-          >
-            pure
-          </text>
-
-          <text
-            x="335"
-            y="105"
-            fill="url(#logoTextGradient)"
-            font-family="Arial, Helvetica, sans-serif"
-            font-size="59"
-            font-weight="300"
-            letter-spacing="-3"
-          >
-            step
-          </text>
-
-          <line x1="220" y1="139" x2="285" y2="139" stroke="#00aaa7" stroke-width="4" stroke-linecap="round"/>
-          <line x1="456" y1="139" x2="507" y2="139" stroke="#00aaa7" stroke-width="4" stroke-linecap="round"/>
-
-          <text
-            x="309"
-            y="151"
-            fill="#00aaa7"
-            font-family="Arial, Helvetica, sans-serif"
-            font-size="29"
-            font-weight="700"
-            letter-spacing="15"
-          >
-            CLEAN
-          </text>
-
-          <text
-            x="253"
-            y="194"
-            fill="#071f45"
-            font-family="Arial, Helvetica, sans-serif"
-            font-size="13"
-            font-weight="700"
-            letter-spacing="6"
-          >
-            CLEAN SPACES. BETTER PLACES.
-          </text>
-        </svg>
+          <span class="brand-slogan">
+            Clean spaces. Better places.
+          </span>
+        </div>
       </a>
 
-      <nav class="navigation-links" id="navigationLinks" aria-label="Main navigation">
+      <nav
+        class="navigation-links"
+        id="navigationLinks"
+        aria-label="Main navigation"
+      >
         <a href="#home">Home</a>
         <a href="#services">Services</a>
         <a href="#results">Results</a>
@@ -1546,110 +1320,13 @@
     <section class="hero" id="home">
       <div class="container hero-grid">
         <div class="hero-copy reveal">
-          <svg class="hero-logo" viewBox="0 0 520 220" role="img" aria-label="Pure Step Clean logo">
-            <defs>
-              <linearGradient id="heroLogoMain" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stop-color="#00aaa7"/>
-                <stop offset="48%" stop-color="#14beb7"/>
-                <stop offset="100%" stop-color="#006879"/>
-              </linearGradient>
-
-              <linearGradient id="heroLogoAccent" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stop-color="#8057dc"/>
-                <stop offset="55%" stop-color="#b35fe0"/>
-                <stop offset="100%" stop-color="#ff686d"/>
-              </linearGradient>
-
-              <linearGradient id="heroLogoText" x1="0" y1="0" x2="1" y2="0">
-                <stop offset="0%" stop-color="#00aaa7"/>
-                <stop offset="55%" stop-color="#5e79d9"/>
-                <stop offset="100%" stop-color="#ff686d"/>
-              </linearGradient>
-            </defs>
-
-            <g transform="translate(18,5)">
-              <path
-                d="M120 14
-                   C66 14 30 44 30 88
-                   C30 129 61 145 109 158
-                   C138 166 152 174 152 187
-                   C152 203 136 211 111 211
-                   L77 211
-                   C116 188 130 171 123 157
-                   C117 145 101 140 76 133
-                   C31 120 7 94 7 60
-                   C7 31 30 9 67 1
-                   C85 -3 104 0 120 14Z"
-                fill="url(#heroLogoMain)"
-              />
-
-              <path
-                d="M91 18
-                   C119 14 146 17 163 35
-                   L198 74
-                   L198 115
-                   L149 62
-                   C137 49 123 44 105 47Z"
-                fill="url(#heroLogoAccent)"
-              />
-
-              <path
-                d="M67 137
-                   C39 147 24 166 24 195
-                   L24 220
-                   C43 194 70 181 106 180
-                   C91 163 79 149 67 137Z"
-                fill="#9a66dc"
-              />
-
-              <path
-                d="M70 158
-                   C42 171 29 190 25 219
-                   C48 192 74 180 109 181
-                   C96 170 83 162 70 158Z"
-                fill="#5538b8"
-              />
-
-              <rect x="135" y="72" width="13" height="13" rx="2" fill="#071f45"/>
-              <rect x="153" y="72" width="13" height="13" rx="2" fill="#071f45"/>
-              <rect x="135" y="90" width="13" height="13" rx="2" fill="#071f45"/>
-              <rect x="153" y="90" width="13" height="13" rx="2" fill="#071f45"/>
-
-              <path
-                d="M-2 43 L4 57 L19 63 L4 69 L-2 84 L-8 69 L-23 63 L-8 57Z"
-                fill="#00aaa7"
-              />
-
-              <path
-                d="M45 7 L49 16 L59 20 L49 24 L45 34 L41 24 L31 20 L41 16Z"
-                fill="#ff686d"
-              />
-
-              <path
-                d="M23 94 L27 103 L37 107 L27 111 L23 121 L19 111 L9 107 L19 103Z"
-                fill="#8057dc"
-              />
-            </g>
-
-            <text x="208" y="105" fill="#071f45" font-family="Arial, Helvetica, sans-serif" font-size="59" font-weight="300" letter-spacing="-3">
-              pure
-            </text>
-
-            <text x="335" y="105" fill="url(#heroLogoText)" font-family="Arial, Helvetica, sans-serif" font-size="59" font-weight="300" letter-spacing="-3">
-              step
-            </text>
-
-            <line x1="220" y1="139" x2="285" y2="139" stroke="#00aaa7" stroke-width="4" stroke-linecap="round"/>
-            <line x1="456" y1="139" x2="507" y2="139" stroke="#00aaa7" stroke-width="4" stroke-linecap="round"/>
-
-            <text x="309" y="151" fill="#00aaa7" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="700" letter-spacing="15">
-              CLEAN
-            </text>
-
-            <text x="253" y="194" fill="#071f45" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" letter-spacing="6">
-              CLEAN SPACES. BETTER PLACES.
-            </text>
-          </svg>
+          <div class="hero-logo-wrap">
+            <img
+              class="hero-logo"
+              src="logo.jpg"
+              alt="Pure Step Clean"
+            >
+          </div>
 
           <p class="eyebrow">
             Premium cleaning and property care
@@ -1713,49 +1390,22 @@
           </div>
         </div>
 
-        <div class="hero-comparison reveal">
-          <div class="comparison-box">
-            <div class="comparison-before"></div>
+        <div class="hero-image-card reveal">
+          <img
+            src="hero-team.jpg"
+            alt="Pure Step Clean team providing residential, Airbnb and commercial cleaning"
+          >
 
-            <div
-              class="comparison-after"
-              id="heroAfter"
-            ></div>
+          <div class="hero-image-message">
+            <small>
+              Everything you need in one company
+            </small>
 
-            <div
-              class="comparison-line"
-              id="heroLine"
-            ></div>
-
-            <div
-              class="comparison-handle"
-              id="heroHandle"
-            >
-              ↔
-            </div>
-
-            <input
-              class="comparison-range"
-              id="heroRange"
-              type="range"
-              min="0"
-              max="100"
-              value="54"
-              aria-label="Compare before and after"
-            >
-
-            <span class="comparison-label before">BEFORE</span>
-            <span class="comparison-label after">AFTER</span>
-
-            <div class="comparison-message">
-              <small>Everything you need in one company</small>
-
-              <strong>
-                Cleaning, organization, property observations,
-                inventory support, styling guidance, small repairs
-                and practical solutions.
-              </strong>
-            </div>
+            <strong>
+              Cleaning, organization, property observations,
+              inventory support, styling guidance, small repairs
+              and practical solutions.
+            </strong>
           </div>
         </div>
       </div>
@@ -1833,82 +1483,177 @@
       </div>
     </div>
 
+    <section class="team-section">
+      <div class="container team-grid">
+        <div class="team-image reveal">
+          <img
+            src="team-residential.jpg"
+            alt="Pure Step Clean team professionally cleaning a residential property"
+          >
+        </div>
+
+        <div class="reveal">
+          <p class="eyebrow">
+            Professional people. Professional standards.
+          </p>
+
+          <h2>
+            A trained team that treats your property with care.
+          </h2>
+
+          <p class="lead">
+            Our team arrives prepared, clearly identified and focused
+            on providing a consistent service experience from the
+            first room to the final inspection.
+          </p>
+
+          <div class="team-copy-list">
+            <div class="team-copy-item">
+              <span>1</span>
+
+              <div>
+                <strong>Clear service standards</strong>
+
+                <p>
+                  Every appointment follows an organized scope,
+                  priorities and quality expectations.
+                </p>
+              </div>
+            </div>
+
+            <div class="team-copy-item">
+              <span>2</span>
+
+              <div>
+                <strong>Professional presentation</strong>
+
+                <p>
+                  Uniformed professionals, organized products
+                  and respectful property care.
+                </p>
+              </div>
+            </div>
+
+            <div class="team-copy-item">
+              <span>3</span>
+
+              <div>
+                <strong>Useful communication</strong>
+
+                <p>
+                  Relevant observations, reports and follow-up
+                  recommendations when applicable.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <a class="button button-primary" href="#contact">
+            Request Your Estimate
+          </a>
+        </div>
+      </div>
+    </section>
+
     <section class="results" id="results">
       <div class="container">
         <div class="section-heading reveal">
           <div>
             <p class="eyebrow">
-              Real transformations
+              Visible transformations
             </p>
 
             <h2>
-              See the difference professional care makes.
+              Spaces prepared with care and attention to detail.
             </h2>
           </div>
 
           <p class="lead">
-            Drag each slider to compare a neglected environment
-            with a cleaner, brighter and more organized result.
+            Cleaning and organization can change how a property
+            looks, feels and performs for families, guests and customers.
           </p>
         </div>
 
         <div class="results-grid">
-          <div class="mini-comparison reveal">
-            <div class="mini-before kitchen-before"></div>
-            <div class="mini-after kitchen-after"></div>
-            <div class="mini-line"></div>
-            <div class="mini-handle">↔</div>
+          <article class="result-card reveal">
+            <span class="result-badge">
+              Airbnb Bedroom
+            </span>
 
-            <input
-              class="mini-range"
-              type="range"
-              min="0"
-              max="100"
-              value="50"
-              aria-label="Kitchen before and after"
+            <img
+              src="before-after-bedroom.jpg"
+              alt="Airbnb bedroom before and after professional cleaning"
             >
 
-            <span class="mini-label before">BEFORE</span>
-            <span class="mini-label after">AFTER</span>
-          </div>
+            <div class="result-content">
+              <h3>Guest-ready bedroom reset</h3>
 
-          <div class="mini-comparison reveal">
-            <div class="mini-before bedroom-before"></div>
-            <div class="mini-after bedroom-after"></div>
-            <div class="mini-line"></div>
-            <div class="mini-handle">↔</div>
+              <p>
+                Bed presentation, linen review, surface cleaning,
+                organization and final visual inspection.
+              </p>
+            </div>
+          </article>
 
-            <input
-              class="mini-range"
-              type="range"
-              min="0"
-              max="100"
-              value="50"
-              aria-label="Bedroom before and after"
+          <article class="result-card reveal">
+            <span class="result-badge">
+              Residential Organization
+            </span>
+
+            <img
+              src="before-after-room.jpg"
+              alt="Residential room before and after cleaning and organization"
             >
 
-            <span class="mini-label before">BEFORE</span>
-            <span class="mini-label after">AFTER</span>
-          </div>
+            <div class="result-content">
+              <h3>A calmer, more organized living space</h3>
 
-          <div class="mini-comparison reveal">
-            <div class="mini-before bathroom-before"></div>
-            <div class="mini-after bathroom-after"></div>
-            <div class="mini-line"></div>
-            <div class="mini-handle">↔</div>
+              <p>
+                Cleaning, decluttering and presentation details
+                designed to improve comfort and functionality.
+              </p>
+            </div>
+          </article>
 
-            <input
-              class="mini-range"
-              type="range"
-              min="0"
-              max="100"
-              value="50"
-              aria-label="Bathroom before and after"
+          <article class="result-card reveal">
+            <span class="result-badge">
+              Bathroom Deep Clean
+            </span>
+
+            <img
+              src="before-after-bathroom.jpg"
+              alt="Bathroom before and after deep cleaning"
             >
 
-            <span class="mini-label before">BEFORE</span>
-            <span class="mini-label after">AFTER</span>
-          </div>
+            <div class="result-content">
+              <h3>Detailed bathroom restoration</h3>
+
+              <p>
+                Mirrors, counters, glass, fixtures, floors,
+                organization and final presentation.
+              </p>
+            </div>
+          </article>
+
+          <article class="result-card reveal">
+            <span class="result-badge">
+              Living & Kitchen Area
+            </span>
+
+            <img
+              src="before-after-living.jpg"
+              alt="Living room and kitchen before and after professional cleaning"
+            >
+
+            <div class="result-content">
+              <h3>Full common-area reset</h3>
+
+              <p>
+                Kitchen surfaces, living room organization,
+                floors, furniture presentation and finishing details.
+              </p>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -1934,26 +1679,44 @@
         </div>
 
         <div class="service-tabs reveal">
-          <button class="service-tab active" data-tab="residential" type="button">
+          <button
+            class="service-tab active"
+            data-tab="residential"
+            type="button"
+          >
             Residential
           </button>
 
-          <button class="service-tab" data-tab="airbnb" type="button">
+          <button
+            class="service-tab"
+            data-tab="airbnb"
+            type="button"
+          >
             Airbnb
           </button>
 
-          <button class="service-tab" data-tab="commercial" type="button">
+          <button
+            class="service-tab"
+            data-tab="commercial"
+            type="button"
+          >
             Commercial
           </button>
 
-          <button class="service-tab" data-tab="support" type="button">
+          <button
+            class="service-tab"
+            data-tab="support"
+            type="button"
+          >
             Property Support
           </button>
         </div>
 
         <div class="service-panel active reveal" id="residential">
           <div class="service-intro">
-            <p class="eyebrow">Residential Care</p>
+            <p class="eyebrow">
+              Residential Care
+            </p>
 
             <h3>
               Your home should be the place where you feel your best.
@@ -2182,8 +1945,7 @@
 
             <p>
               We serve offices, shops, clinics, studios,
-              professional spaces and customer-facing businesses
-              throughout Limeira and surrounding areas.
+              professional spaces and customer-facing businesses.
             </p>
 
             <div class="benefit-quote">
@@ -2438,50 +2200,82 @@
         <div class="standard-grid">
           <article class="standard-card reveal">
             <div class="standard-number">01</div>
+
             <strong>Trained Team</strong>
-            <p>Professionals guided by structured quality standards.</p>
+
+            <p>
+              Professionals guided by structured quality standards.
+            </p>
           </article>
 
           <article class="standard-card reveal">
             <div class="standard-number">02</div>
+
             <strong>Uniformed Professionals</strong>
-            <p>Professional presentation and easy identification.</p>
+
+            <p>
+              Professional presentation and easy identification.
+            </p>
           </article>
 
           <article class="standard-card reveal">
             <div class="standard-number">03</div>
+
             <strong>Multilingual Support</strong>
-            <p>Communication adapted to the needs of each client.</p>
+
+            <p>
+              Communication adapted to the needs of each client.
+            </p>
           </article>
 
           <article class="standard-card reveal">
             <div class="standard-number">04</div>
+
             <strong>Detailed Reports</strong>
-            <p>Relevant notes, observations and service records.</p>
+
+            <p>
+              Relevant notes, observations and service records.
+            </p>
           </article>
 
           <article class="standard-card reveal">
             <div class="standard-number">05</div>
+
             <strong>Eco-Friendly Options</strong>
-            <p>Eco-conscious products available upon request.</p>
+
+            <p>
+              Eco-conscious products available upon request.
+            </p>
           </article>
 
           <article class="standard-card reveal">
             <div class="standard-number">06</div>
+
             <strong>Customized Plans</strong>
-            <p>Frequency and scope built around your needs.</p>
+
+            <p>
+              Frequency and scope built around your needs.
+            </p>
           </article>
 
           <article class="standard-card reveal">
             <div class="standard-number">07</div>
+
             <strong>Fast Response</strong>
-            <p>Target response time of up to three business hours.</p>
+
+            <p>
+              Target response time of up to three business hours.
+            </p>
           </article>
 
           <article class="standard-card reveal">
             <div class="standard-number">08</div>
-            <strong>Limeira Region</strong>
-            <p>Service throughout Limeira and surrounding areas.</p>
+
+            <strong>Flexible Property Care</strong>
+
+            <p>
+              Residential, Airbnb, commercial and operational support.
+            </p>
           </article>
         </div>
       </div>
@@ -2504,26 +2298,42 @@
         <div class="process-grid">
           <article class="process-card reveal">
             <span>1</span>
+
             <h3>Send Your Request</h3>
-            <p>Choose the property type, service and send a short message.</p>
+
+            <p>
+              Choose the property type, service and send a short message.
+            </p>
           </article>
 
           <article class="process-card reveal">
             <span>2</span>
+
             <h3>Receive a Response</h3>
-            <p>Our target response time is within three business hours.</p>
+
+            <p>
+              Our target response time is within three business hours.
+            </p>
           </article>
 
           <article class="process-card reveal">
             <span>3</span>
+
             <h3>Confirm the Details</h3>
-            <p>We align on timing, access, priorities and products.</p>
+
+            <p>
+              We align on timing, access, priorities and products.
+            </p>
           </article>
 
           <article class="process-card reveal">
             <span>4</span>
+
             <h3>Receive the Service</h3>
-            <p>Our team completes the work and provides relevant updates.</p>
+
+            <p>
+              Our team completes the work and provides relevant updates.
+            </p>
           </article>
         </div>
       </div>
@@ -2538,26 +2348,25 @@
             </p>
 
             <h2>
-              Real experiences will live here.
+              Genuine client experiences will live here.
             </h2>
           </div>
 
           <p class="lead">
-            We only publish genuine, authorized feedback.
-            Verified client reviews can be added here as they
-            become available.
+            We publish genuine, authorized feedback from clients
+            and verified service platforms.
           </p>
         </div>
 
         <div class="reviews-placeholder reveal">
           <div>
-            <strong>Verified reviews coming soon</strong>
+            <strong>
+              Verified reviews coming soon
+            </strong>
 
             <p>
-              This section is intentionally free of invented names
-              or testimonials. Genuine reviews from clients and
-              service platforms can be added without redesigning
-              the website.
+              Genuine reviews can be added here without changing
+              the structure or design of the website.
             </p>
           </div>
         </div>
@@ -2590,18 +2399,6 @@
             <div class="faq-answer">
               Yes. Product requirements are confirmed before service.
               Eco-conscious alternatives are also available upon request.
-            </div>
-          </article>
-
-          <article class="faq-item">
-            <button class="faq-question" type="button">
-              <span>Do you serve Limeira and surrounding areas?</span>
-              <span>+</span>
-            </button>
-
-            <div class="faq-answer">
-              Yes. Service is available throughout Limeira and nearby
-              areas, subject to distance, scope and schedule availability.
             </div>
           </article>
 
@@ -2653,6 +2450,19 @@
               sent within 24 hours after completion.
             </div>
           </article>
+
+          <article class="faq-item">
+            <button class="faq-question" type="button">
+              <span>Can you help organize or improve a property?</span>
+              <span>+</span>
+            </button>
+
+            <div class="faq-answer">
+              Yes. Organization, property observations,
+              practical improvement recommendations and approved
+              purchasing support are available.
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -2680,8 +2490,13 @@
             </div>
 
             <div class="contact-detail">
-              <strong>Service Area:</strong>
-              Limeira and surrounding areas
+              <strong>Phone/SMS:</strong>
+              331-600-7040
+            </div>
+
+            <div class="contact-detail">
+              <strong>Instagram:</strong>
+              @purestepclean
             </div>
 
             <div class="contact-detail">
@@ -2696,95 +2511,13 @@
             </div>
           </div>
 
-          <svg class="contact-logo" viewBox="0 0 520 220" role="img" aria-label="Pure Step Clean logo">
-            <defs>
-              <linearGradient id="contactLogoMain" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stop-color="#00aaa7"/>
-                <stop offset="48%" stop-color="#14beb7"/>
-                <stop offset="100%" stop-color="#006879"/>
-              </linearGradient>
-
-              <linearGradient id="contactLogoAccent" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stop-color="#8057dc"/>
-                <stop offset="55%" stop-color="#b35fe0"/>
-                <stop offset="100%" stop-color="#ff686d"/>
-              </linearGradient>
-
-              <linearGradient id="contactLogoText" x1="0" y1="0" x2="1" y2="0">
-                <stop offset="0%" stop-color="#00aaa7"/>
-                <stop offset="55%" stop-color="#5e79d9"/>
-                <stop offset="100%" stop-color="#ff686d"/>
-              </linearGradient>
-            </defs>
-
-            <g transform="translate(18,5)">
-              <path
-                d="M120 14
-                   C66 14 30 44 30 88
-                   C30 129 61 145 109 158
-                   C138 166 152 174 152 187
-                   C152 203 136 211 111 211
-                   L77 211
-                   C116 188 130 171 123 157
-                   C117 145 101 140 76 133
-                   C31 120 7 94 7 60
-                   C7 31 30 9 67 1
-                   C85 -3 104 0 120 14Z"
-                fill="url(#contactLogoMain)"
-              />
-
-              <path
-                d="M91 18
-                   C119 14 146 17 163 35
-                   L198 74
-                   L198 115
-                   L149 62
-                   C137 49 123 44 105 47Z"
-                fill="url(#contactLogoAccent)"
-              />
-
-              <path
-                d="M67 137
-                   C39 147 24 166 24 195
-                   L24 220
-                   C43 194 70 181 106 180
-                   C91 163 79 149 67 137Z"
-                fill="#9a66dc"
-              />
-
-              <path
-                d="M70 158
-                   C42 171 29 190 25 219
-                   C48 192 74 180 109 181
-                   C96 170 83 162 70 158Z"
-                fill="#5538b8"
-              />
-
-              <rect x="135" y="72" width="13" height="13" rx="2" fill="#071f45"/>
-              <rect x="153" y="72" width="13" height="13" rx="2" fill="#071f45"/>
-              <rect x="135" y="90" width="13" height="13" rx="2" fill="#071f45"/>
-              <rect x="153" y="90" width="13" height="13" rx="2" fill="#071f45"/>
-            </g>
-
-            <text x="208" y="105" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="59" font-weight="300" letter-spacing="-3">
-              pure
-            </text>
-
-            <text x="335" y="105" fill="url(#contactLogoText)" font-family="Arial, Helvetica, sans-serif" font-size="59" font-weight="300" letter-spacing="-3">
-              step
-            </text>
-
-            <line x1="220" y1="139" x2="285" y2="139" stroke="#27c8c0" stroke-width="4" stroke-linecap="round"/>
-            <line x1="456" y1="139" x2="507" y2="139" stroke="#27c8c0" stroke-width="4" stroke-linecap="round"/>
-
-            <text x="309" y="151" fill="#27c8c0" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="700" letter-spacing="15">
-              CLEAN
-            </text>
-
-            <text x="253" y="194" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" letter-spacing="6">
-              CLEAN SPACES. BETTER PLACES.
-            </text>
-          </svg>
+          <div class="contact-logo-wrap">
+            <img
+              class="contact-logo"
+              src="logo.jpg"
+              alt="Pure Step Clean"
+            >
+          </div>
         </div>
 
         <form
@@ -2857,7 +2590,6 @@
                 id="city"
                 name="city"
                 type="text"
-                placeholder="Limeira"
                 required
               >
             </div>
@@ -2872,9 +2604,16 @@
               >
                 <option value="">Select one</option>
                 <option value="Residential">Residential</option>
-                <option value="Airbnb / Short-Term Rental">Airbnb / Short-Term Rental</option>
+
+                <option value="Airbnb / Short-Term Rental">
+                  Airbnb / Short-Term Rental
+                </option>
+
                 <option value="Commercial">Commercial</option>
-                <option value="Property Support">Property Support</option>
+
+                <option value="Property Support">
+                  Property Support
+                </option>
               </select>
             </div>
 
@@ -2886,7 +2625,9 @@
                 name="service_requested"
                 required
               >
-                <option value="">Choose a property type first</option>
+                <option value="">
+                  Choose a property type first
+                </option>
               </select>
             </div>
 
@@ -2922,7 +2663,9 @@
             </div>
 
             <div class="field full">
-              <label for="message">Tell Us About Your Needs</label>
+              <label for="message">
+                Tell Us About Your Needs
+              </label>
 
               <textarea
                 id="message"
@@ -2961,95 +2704,17 @@
 
   <footer class="footer">
     <div class="container footer-grid">
-      <svg class="footer-logo" viewBox="0 0 520 220" role="img" aria-label="Pure Step Clean logo">
-        <defs>
-          <linearGradient id="footerLogoMain" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stop-color="#00aaa7"/>
-            <stop offset="48%" stop-color="#14beb7"/>
-            <stop offset="100%" stop-color="#006879"/>
-          </linearGradient>
+      <div class="footer-brand">
+        <img src="logo.jpg" alt="Pure Step Clean logo">
 
-          <linearGradient id="footerLogoAccent" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stop-color="#8057dc"/>
-            <stop offset="55%" stop-color="#b35fe0"/>
-            <stop offset="100%" stop-color="#ff686d"/>
-          </linearGradient>
+        <div>
+          <strong>Pure Step Clean</strong>
 
-          <linearGradient id="footerLogoText" x1="0" y1="0" x2="1" y2="0">
-            <stop offset="0%" stop-color="#00aaa7"/>
-            <stop offset="55%" stop-color="#5e79d9"/>
-            <stop offset="100%" stop-color="#ff686d"/>
-          </linearGradient>
-        </defs>
-
-        <g transform="translate(18,5)">
-          <path
-            d="M120 14
-               C66 14 30 44 30 88
-               C30 129 61 145 109 158
-               C138 166 152 174 152 187
-               C152 203 136 211 111 211
-               L77 211
-               C116 188 130 171 123 157
-               C117 145 101 140 76 133
-               C31 120 7 94 7 60
-               C7 31 30 9 67 1
-               C85 -3 104 0 120 14Z"
-            fill="url(#footerLogoMain)"
-          />
-
-          <path
-            d="M91 18
-               C119 14 146 17 163 35
-               L198 74
-               L198 115
-               L149 62
-               C137 49 123 44 105 47Z"
-            fill="url(#footerLogoAccent)"
-          />
-
-          <path
-            d="M67 137
-               C39 147 24 166 24 195
-               L24 220
-               C43 194 70 181 106 180
-               C91 163 79 149 67 137Z"
-            fill="#9a66dc"
-          />
-
-          <path
-            d="M70 158
-               C42 171 29 190 25 219
-               C48 192 74 180 109 181
-               C96 170 83 162 70 158Z"
-            fill="#5538b8"
-          />
-
-          <rect x="135" y="72" width="13" height="13" rx="2" fill="#ffffff"/>
-          <rect x="153" y="72" width="13" height="13" rx="2" fill="#ffffff"/>
-          <rect x="135" y="90" width="13" height="13" rx="2" fill="#ffffff"/>
-          <rect x="153" y="90" width="13" height="13" rx="2" fill="#ffffff"/>
-        </g>
-
-        <text x="208" y="105" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="59" font-weight="300" letter-spacing="-3">
-          pure
-        </text>
-
-        <text x="335" y="105" fill="url(#footerLogoText)" font-family="Arial, Helvetica, sans-serif" font-size="59" font-weight="300" letter-spacing="-3">
-          step
-        </text>
-
-        <line x1="220" y1="139" x2="285" y2="139" stroke="#27c8c0" stroke-width="4" stroke-linecap="round"/>
-        <line x1="456" y1="139" x2="507" y2="139" stroke="#27c8c0" stroke-width="4" stroke-linecap="round"/>
-
-        <text x="309" y="151" fill="#27c8c0" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="700" letter-spacing="15">
-          CLEAN
-        </text>
-
-        <text x="253" y="194" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" letter-spacing="6">
-          CLEAN SPACES. BETTER PLACES.
-        </text>
-      </svg>
+          <small>
+            Clean spaces. Better places.
+          </small>
+        </div>
+      </div>
 
       <div class="footer-links">
         <a href="#home">Home</a>
@@ -3099,51 +2764,14 @@
         link.addEventListener("click", function () {
           navigationLinks.classList.remove("open");
           document.body.classList.remove("menu-open");
-          menuButton.setAttribute("aria-expanded", "false");
+
+          menuButton.setAttribute(
+            "aria-expanded",
+            "false"
+          );
+
           menuButton.textContent = "☰";
         });
-      });
-
-    function connectComparison(
-      rangeElement,
-      afterElement,
-      lineElement,
-      handleElement
-    ) {
-      rangeElement.addEventListener(
-        "input",
-        function () {
-          const value =
-            rangeElement.value + "%";
-
-          afterElement.style.width =
-            value;
-
-          lineElement.style.left =
-            value;
-
-          handleElement.style.left =
-            value;
-        }
-      );
-    }
-
-    connectComparison(
-      document.getElementById("heroRange"),
-      document.getElementById("heroAfter"),
-      document.getElementById("heroLine"),
-      document.getElementById("heroHandle")
-    );
-
-    document
-      .querySelectorAll(".mini-comparison")
-      .forEach(function (comparison) {
-        connectComparison(
-          comparison.querySelector(".mini-range"),
-          comparison.querySelector(".mini-after"),
-          comparison.querySelector(".mini-line"),
-          comparison.querySelector(".mini-handle")
-        );
       });
 
     const serviceTabs =
@@ -3360,7 +2988,7 @@
             "form-message error";
 
           formMessage.textContent =
-            "We could not send your request. Please try again or email hello@purestepclean.com.";
+            "We could not send your request. Please try again, text 331-600-7040 or email hello@purestepclean.com.";
         } finally {
           submitButton.disabled =
             false;
@@ -3409,4 +3037,4 @@
       new Date().getFullYear();
   </script>
 </body>
-</html>
+</html>>
