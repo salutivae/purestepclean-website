@@ -479,6 +479,30 @@ footer{padding:34px 0 26px;border-top:1px solid var(--line)}
 }
 @media(max-width:480px){.explore-rooms{grid-template-columns:1fr}}
 
+
+/* ===== Complete diagnosis layer: all quiz outcomes ===== */
+.diagnosis-signals{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.diagnosis-signal{background:rgba(255,255,255,.11);border:1px solid rgba(255,255,255,.18);color:#fff;border-radius:999px;padding:8px 11px;font-size:.74rem;font-weight:750}
+.explore-focus-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:18px}
+.explore-focus{border:1px solid var(--line);border-radius:17px;background:#fff;padding:17px}
+.explore-focus strong{display:block;color:var(--sage-dark);font-size:.94rem}
+.explore-focus span{display:block;color:var(--muted);font-size:.8rem;line-height:1.5;margin-top:5px}
+.explore-options{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:18px}
+.explore-option{border:1px solid var(--line);border-radius:17px;padding:16px;background:#fff}
+.explore-option strong{display:block;color:var(--sage-dark);font-size:.9rem}
+.explore-option span{display:block;color:var(--muted);font-size:.78rem;line-height:1.45;margin-top:5px}
+.explore-next{margin-top:18px;padding:18px;border-radius:18px;background:linear-gradient(145deg,#eef3eb,#f8f4ec);border:1px solid var(--line)}
+.explore-next strong{display:block;color:var(--sage-dark);font-size:1rem}
+.explore-next span{display:block;color:var(--muted);font-size:.82rem;line-height:1.55;margin-top:6px}
+.answer-recap{margin-top:18px}
+.answer-recap summary{cursor:pointer;font-weight:850;color:var(--sage-dark);font-size:.86rem}
+.answer-recap-list{display:grid;gap:7px;margin-top:11px}
+.answer-recap-item{padding:10px 12px;border-radius:12px;background:#fff;border:1px solid var(--line);font-size:.78rem;color:var(--muted)}
+.answer-recap-item b{color:var(--sage-dark)}
+@media(max-width:760px){
+  .explore-focus-grid,.explore-options{grid-template-columns:1fr}
+}
+
 </style>
 </head>
 <body>
@@ -899,132 +923,299 @@ function getResult(){
   return {title:'Recurring Commercial Cleaning',service:'Commercial — Recurring Cleaning',why:['Your space sounds like it needs reliable maintenance and consistent presentation.','Recurring care can help keep employees focused on their actual work and keep the environment client-ready.']};
 }
 
-function standardExplorerHTML(r){
-  const standardMatch = r.title==='Standard Cleaning' || r.title==='Standard Cleaning + Recurring Care';
-  if(!standardMatch) return '';
 
+const serviceExperience={
+  "Standard Cleaning":{
+    eyebrow:"A lighter way to keep up",
+    headline:"Imagine coming home and everything simply feels right.",
+    intro:"Your answers point to maintenance — not a full reset. Standard Cleaning keeps an already-manageable home consistently cared for, without overcomplicating the service.",
+    focus:[
+      ["Everyday spaces","Kitchen, bathrooms, bedrooms and living areas receive professional routine care."],
+      ["Visible details","Dust, surfaces, mirrors, fixtures, floors and the touchpoints that shape how the home feels."],
+      ["Light organization","Visible items are lightly straightened so the finished home feels calmer, not just cleaner."],
+      ["Flexible finish","Keep it naturally home-ready or choose more polished presentation details."]
+    ],
+    options:[
+      ["Home Finish","Fresh, comfortable and naturally ready for everyday family life."],
+      ["Hotel-Inspired Finish","An elevated presentation with selected styling details."],
+      ["Targeted Extras","Add only what matters: linens, fridge, oven, windows, laundry or organization."]
+    ],
+    nextTitle:"A clean home without building your week around cleaning.",
+    nextText:"Book it once, or turn it into a recurring rhythm when you’re ready."
+  },
+  "Standard Cleaning + Recurring Care":{
+    eyebrow:"Your best rhythm",
+    headline:"Your home doesn’t need a rescue. It needs consistency.",
+    intro:"Your answers suggest that professional maintenance will protect your free time and prevent small messes from becoming bigger resets.",
+    focus:[
+      ["Weekly care","Best for busy households, pets, children or anyone who wants minimal buildup."],
+      ["Every 2 weeks","A balanced maintenance rhythm for many homes."],
+      ["Monthly care","A longer interval with more resetting required at each visit."],
+      ["Saved preferences","Your finishing style and household notes can become part of your recurring home profile."]
+    ],
+    options:[
+      ["Welcome Experience","Qualifying recurring plans can include a Pure Step welcome experience."],
+      ["Home Finish","A natural, comfortable everyday presentation."],
+      ["Hotel-Inspired Finish","A more styled presentation when you want the home to feel extra polished."]
+    ],
+    nextTitle:"The longer the interval, the more there is to reset.",
+    nextText:"We’ll recommend a rhythm based on your household, not force you into a package."
+  },
+  "Deep Cleaning + Recurring Care":{
+    eyebrow:"Reset first. Maintain after.",
+    headline:"Your home may need a stronger starting point before maintenance feels easy.",
+    intro:"The signals in your quiz suggest accumulated detail work, heavier buildup or areas that routine cleaning alone may not solve. Deep Cleaning creates the baseline; recurring care helps protect it.",
+    focus:[
+      ["Built-up detail","More attention to grease, dust buildup, edges, corners and overlooked surfaces."],
+      ["Kitchen reset","A stronger focus on the areas where everyday use leaves residue."],
+      ["Bathroom detail","More intensive attention to buildup and hard-working bathroom surfaces."],
+      ["A better baseline","The goal is to make future maintenance lighter and more predictable."]
+    ],
+    options:[
+      ["Deep first","Start with the stronger reset your home appears to need."],
+      ["Add targeted interiors","Oven, refrigerator, cabinets and other selected detail work can be added."],
+      ["Then maintain","Transition to Weekly, Biweekly or Monthly care after the reset."]
+    ],
+    nextTitle:"Your home is reset. Now let’s keep it that way.",
+    nextText:"We’ll confirm whether every area needs deep work or whether a targeted reset is enough."
+  },
+  "Move-In / Move-Out Cleaning":{
+    eyebrow:"A cleaner transition",
+    headline:"Moving is already a lot. The cleaning shouldn’t become another project.",
+    intro:"Your quiz shows that the home is in transition. This service is built around handoff, arrival and the details that matter when a space is becoming someone’s next chapter.",
+    focus:[
+      ["Empty-space detail","Accessible surfaces, floors, bathrooms, kitchen and areas normally hidden by daily living."],
+      ["Move-In ready","Create a cleaner baseline before belongings settle into the home."],
+      ["Move-Out ready","Prepare the property for handoff, inspection, sale, rental or the next occupant."],
+      ["Scope by condition","We adjust the project to the actual condition instead of charging by the clock."]
+    ],
+    options:[
+      ["Inside cabinets","Useful when storage is empty and accessible."],
+      ["Appliance interiors","Refrigerator and oven can be added when needed."],
+      ["Final-detail focus","Interior windows and other turnover details can be included by scope."]
+    ],
+    nextTitle:"One move. One clear scope. No running clock.",
+    nextText:"Tell us whether you’re moving in or moving out when you request your estimate, and we’ll tailor the checklist."
+  },
+  "One-Time + Event Cleaning":{
+    eyebrow:"For the moment that matters",
+    headline:"Some cleans aren’t about routine. They’re about being ready.",
+    intro:"Your answers point to a specific occasion rather than ongoing maintenance. We keep the project focused on the event, the areas people will notice and the way you want the home to feel.",
+    focus:[
+      ["Before an event","Prepare the home so you can focus on hosting instead of last-minute cleaning."],
+      ["After an event","Restore the spaces that worked hardest after guests leave."],
+      ["Priority zones","Kitchen, bathrooms, entry and entertaining areas can receive extra attention."],
+      ["Presentation","The final look can be simple and home-ready or more polished for guests."]
+    ],
+    options:[
+      ["Guest-ready finish","Add presentation details in bathrooms, bedrooms or entertaining areas."],
+      ["Kitchen support","Target the kitchen before hosting or after heavier use."],
+      ["Custom priorities","Tell us what guests will see — or what the party left behind."]
+    ],
+    nextTitle:"Enjoy the occasion. We’ll take care of the reset.",
+    nextText:"When you contact us, tell us whether the service is before or after the event so we can shape the scope correctly."
+  },
+  "Home Reset: Cleaning + Organization":{
+    eyebrow:"More than a surface clean",
+    headline:"When the problem is clutter plus cleaning, doing only one rarely fixes the feeling.",
+    intro:"Your quiz suggests that your home needs both cleaning and better function. Home Reset combines professional cleaning with practical organization so the result is easier to maintain after we leave.",
+    focus:[
+      ["Clean the space","Handle the surfaces, floors, bathrooms, kitchen and everyday cleaning needs."],
+      ["Reduce visual noise","Bring order to the areas that make the home feel constantly unfinished."],
+      ["Create function","Organize around the way your household actually lives."],
+      ["Make maintenance easier","The goal is not an Instagram-perfect home — it is a home that works better."]
+    ],
+    options:[
+      ["Closets","Edit, group and create a more usable system."],
+      ["Pantry & kitchen","Improve visibility, access and everyday flow."],
+      ["Rooms & storage","Bedrooms, playrooms, offices, laundry and storage areas can be scoped."]
+    ],
+    nextTitle:"A place for everything changes everything.",
+    nextText:"We’ll identify which spaces need organization and which simply need a professional clean."
+  },
+  "Airbnb Turnover + Recurring Property Care":{
+    eyebrow:"Between guests, consistency wins",
+    headline:"A turnover should feel repeatable — not like a new emergency every checkout.",
+    intro:"Your answers suggest that the property mainly needs reliable, repeatable care between stays. The goal is a guest-ready home you don’t have to personally re-check every time.",
+    focus:[
+      ["Turnover cleaning","A repeatable cleaning routine built around checkout and the next arrival."],
+      ["Guest-ready presentation","Beds, bathrooms, kitchen and visible spaces finished with arrival in mind."],
+      ["Photo verification","Post-service documentation can help you see the property without being there."],
+      ["Restocking awareness","Consumables and presentation needs can be incorporated into the property routine."]
+    ],
+    options:[
+      ["Welcome presentation","Create a more intentional first impression for the next guest."],
+      ["Inventory awareness","Flag low or missing essentials before they become guest problems."],
+      ["Property preferences","Keep property-specific notes so the finish stays consistent."]
+    ],
+    nextTitle:"Less re-checking. More confidence between stays.",
+    nextText:"We’ll confirm turnover timing, laundry, restocking and property-specific requirements before quoting."
+  },
+  "Airbnb Deep Clean + Turnover Care":{
+    eyebrow:"Rebuild the baseline",
+    headline:"Great turnovers are easier when the property starts from a truly clean baseline.",
+    intro:"Your quiz suggests accumulated detail work, inconsistent past cleaning or signs that routine turnovers are no longer enough. A Deep Clean resets the property; turnover care protects the result.",
+    focus:[
+      ["Accumulated detail","Address buildup that normal checkout cleaning doesn’t have time to reach."],
+      ["Guest-impact areas","Bathrooms, kitchen, edges, fixtures and presentation details get a closer look."],
+      ["Visual baseline","Bring the property back to the standard you want guests to experience."],
+      ["Turnover transition","Once reset, move into a repeatable maintenance system."]
+    ],
+    options:[
+      ["Appliance interiors","Useful when guest use has created buildup."],
+      ["Linen & storage review","Improve the behind-the-scenes setup that affects every turnover."],
+      ["Photo check","Document the finished property and help identify future wear."]
+    ],
+    nextTitle:"Reset once. Protect the standard every stay.",
+    nextText:"We’ll determine whether the whole property needs deep work or whether specific zones need the reset."
+  },
+  "Property Reconfiguration + Visual Refresh":{
+    eyebrow:"Clean may not be the whole problem",
+    headline:"Sometimes the property is clean — but it still isn’t showing its best side.",
+    intro:"Your answers point to presentation, flow or visual fatigue. This service looks beyond cleaning to how the property feels in person and how it presents to future guests.",
+    focus:[
+      ["Visual review","Identify rooms or details that feel tired, crowded or visually inconsistent."],
+      ["Furniture flow","Improve placement when the layout makes the space harder to use or photograph."],
+      ["Guest presentation","Refine small details that influence first impressions."],
+      ["Cleaning + refresh","Pair the visual work with the right cleaning baseline."]
+    ],
+    options:[
+      ["Photo-based review","Start with photos/video when an on-site review isn’t necessary."],
+      ["Small reconfiguration","Adjust layout, styling and functional placement without renovation."],
+      ["Implementation support","Scope the practical changes Pure Step can help carry out."]
+    ],
+    nextTitle:"The goal isn’t decoration for decoration’s sake.",
+    nextText:"It’s a property that feels intentional, functions better and presents more strongly."
+  },
+  "Full Property Care / Management Support":{
+    eyebrow:"More off your plate",
+    headline:"You’re not looking for another cleaner to manage. You’re looking for less to manage.",
+    intro:"Your quiz suggests that cleaning is only one part of the operational load. Full Property Care is designed for owners who need stronger oversight, consistency and eyes on the property between stays.",
+    focus:[
+      ["Cleaning oversight","Keep the physical standard of the property consistent."],
+      ["Inventory awareness","Track visible shortages, missing essentials and recurring supply needs."],
+      ["Issue reporting","Flag damage, wear or operational concerns discovered during service."],
+      ["Presentation control","Protect the way the property is set for each arrival."]
+    ],
+    options:[
+      ["Restocking support","Coordinate selected consumables and property essentials."],
+      ["Visual refresh","Identify when presentation or setup starts to slip."],
+      ["Custom property scope","Build the operational support around what you actually want off your plate."]
+    ],
+    nextTitle:"Not just another turnover. A property-care system.",
+    nextText:"We’ll define exactly what Pure Step owns, what you retain and how communication should work."
+  },
+  "Recurring Commercial Cleaning":{
+    eyebrow:"Consistent spaces build confidence",
+    headline:"Your business needs to stay ready without your team becoming the cleaning crew.",
+    intro:"Your answers suggest that reliable recurring maintenance is the best fit. The goal is a consistently professional environment for employees, clients and visitors.",
+    focus:[
+      ["Client-facing areas","Maintain the spaces that shape first impressions."],
+      ["Bathrooms & common areas","Keep high-use areas on a dependable routine."],
+      ["Workspaces","Support a cleaner environment without disrupting the workday."],
+      ["Scheduled consistency","Build frequency around actual traffic and use."]
+    ],
+    options:[
+      ["Multiple visits weekly","For higher traffic or hospitality-style environments."],
+      ["Weekly care","A dependable routine for many offices and commercial spaces."],
+      ["Custom frequency","Adjust around operating hours, traffic and problem areas."]
+    ],
+    nextTitle:"Your staff should focus on their work — not quietly become the cleaning team.",
+    nextText:"We’ll build the scope around your space, traffic and schedule before quoting."
+  },
+  "Commercial Deep Clean / Reset":{
+    eyebrow:"Start with a stronger baseline",
+    headline:"Routine maintenance works better after the space has truly been reset.",
+    intro:"Your answers indicate that the business may need more than ongoing surface maintenance right now. A Commercial Deep Clean tackles the accumulated detail work first.",
+    focus:[
+      ["High-traffic buildup","Address the areas that daily use has worn down."],
+      ["Bathrooms & shared spaces","Give heavily used zones more detailed attention."],
+      ["Edges & overlooked details","Target the places recurring cleaning may have missed."],
+      ["Baseline for maintenance","Create a cleaner starting point for an ongoing plan if needed."]
+    ],
+    options:[
+      ["One-time reset","Use Deep Cleaning as a standalone project."],
+      ["Targeted reset","Focus only on the problem areas if the whole facility doesn’t need it."],
+      ["Transition to recurring","Build a maintenance schedule after the reset."]
+    ],
+    nextTitle:"Fix the baseline before you judge the maintenance plan.",
+    nextText:"We’ll inspect the scope by condition, not by how many hours we can sell."
+  },
+  "Customized Commercial Plan":{
+    eyebrow:"Not every business fits a package",
+    headline:"Your space has specific needs. The cleaning plan should, too.",
+    intro:"Your quiz suggests that a standard recurring package may miss the point. We can shape the service around traffic, priority areas, operating hours and the way your business actually functions.",
+    focus:[
+      ["Priority zones","Focus resources where cleanliness matters most."],
+      ["Operational fit","Work around hours, access and business activity."],
+      ["Flexible scope","Combine recurring care with targeted detail work."],
+      ["Clear expectations","Define what is included so the service stays consistent."]
+    ],
+    options:[
+      ["High-traffic focus","Entrances, bathrooms, common areas and other heavy-use zones."],
+      ["Mixed-frequency care","Different areas can receive different levels of attention."],
+      ["Special requirements","Build around industry, access or property-specific needs."]
+    ],
+    nextTitle:"Custom does not have to mean complicated.",
+    nextText:"The goal is one clear scope that fits the business instead of forcing the business into a preset package."
+  }
+};
+
+function answerRecapHTML(){
+  const relevant=answers.filter(a=>a.path!=='start');
+  if(!relevant.length) return '';
+  const arr=quiz[space]||[];
+  return `<details class="answer-recap">
+    <summary>See what shaped your recommendation +</summary>
+    <div class="answer-recap-list">
+      ${relevant.map(a=>{
+        const q=arr[a.index]?.q||'Your answer';
+        return `<div class="answer-recap-item"><b>${q}</b><br>${a.label}</div>`;
+      }).join('')}
+    </div>
+  </details>`;
+}
+
+function matchExplorerHTML(r){
+  const x=serviceExperience[r.title];
+  if(!x) return '';
   return `
   <div class="match-explorer" id="matchExplorer">
     <div class="explore-wrap">
       <div class="explore-intro">
-        <div class="explore-eyebrow">Explore your match</div>
-        <h4>Imagine coming home and everything simply feels right.</h4>
-        <p>Standard Cleaning is designed for homes that already have a good baseline and need consistent professional care — without turning every visit into a full reset.</p>
-        <span class="explore-mini-cta">Keep scrolling to see what your clean can feel like ↓</span>
+        <div class="explore-eyebrow">${x.eyebrow}</div>
+        <h4>${x.headline}</h4>
+        <p>${x.intro}</p>
+        <span class="explore-mini-cta">Explore what this match means for you ↓</span>
       </div>
 
       <div class="explore-section">
-        <h5>This is what Standard Cleaning takes care of.</h5>
-        <p class="explore-copy">The essentials are handled throughout the home. Tap a space only if you want to see the details.</p>
-        <div class="explore-rooms">
-          <details class="explore-room">
-            <summary>Kitchen</summary>
-            <ul>
-              <li>Countertops & accessible surfaces</li>
-              <li>Sink & faucet</li>
-              <li>Stovetop surface</li>
-              <li>Exterior of appliances</li>
-              <li>Routine cabinet-exterior care</li>
-              <li>Floors & light visible tidying</li>
-            </ul>
-          </details>
-          <details class="explore-room">
-            <summary>Bathrooms</summary>
-            <ul>
-              <li>Toilet, sink & vanity</li>
-              <li>Mirrors & fixtures</li>
-              <li>Tub / shower routine cleaning</li>
-              <li>Trash removal</li>
-              <li>Floors</li>
-              <li>Light presentation & organization</li>
-            </ul>
-          </details>
-          <details class="explore-room">
-            <summary>Bedrooms</summary>
-            <ul>
-              <li>Accessible surface dusting</li>
-              <li>Mirrors & visible touchpoints</li>
-              <li>Floors</li>
-              <li>Light organization</li>
-              <li>Bed presentation when selected</li>
-            </ul>
-          </details>
-          <details class="explore-room">
-            <summary>Living Spaces</summary>
-            <ul>
-              <li>Accessible surface dusting</li>
-              <li>Tables & visible furniture surfaces</li>
-              <li>Mirrors</li>
-              <li>Floors</li>
-              <li>Light organization</li>
-              <li>Final presentation</li>
-            </ul>
-          </details>
+        <h5>What this service focuses on</h5>
+        <p class="explore-copy">Not a giant checklist you have to study. These are the parts of the service that matter most for the situation your quiz identified.</p>
+        <div class="explore-focus-grid">
+          ${x.focus.map(i=>`<div class="explore-focus"><strong>${i[0]}</strong><span>${i[1]}</span></div>`).join('')}
         </div>
       </div>
 
       <div class="explore-section soft">
-        <h5>But clean doesn’t have to look the same for everyone.</h5>
-        <p class="explore-copy">Choose the feeling you want to come home to. Your preference can become part of the way we care for your home.</p>
-        <div class="finish-grid">
-          <div class="finish-card">
-            <span class="finish-label">Natural</span>
-            <strong>Home Finish</strong>
-            <p>Fresh, comfortable and ready for real life — a polished finish that still feels naturally yours.</p>
-          </div>
-          <div class="finish-card hotel">
-            <span class="finish-label">Elevated</span>
-            <strong>Hotel-Inspired Finish</strong>
-            <p>A more presentation-focused finish with styled details when selected: beds, towels, paper details and guest-ready touches.</p>
-          </div>
+        <h5>Make it fit your space</h5>
+        <p class="explore-copy">You don’t have to choose everything. These are simply the most relevant ways to personalize this service.</p>
+        <div class="explore-options">
+          ${x.options.map(i=>`<div class="explore-option"><strong>${i[0]}</strong><span>${i[1]}</span></div>`).join('')}
         </div>
+        ${answerRecapHTML()}
       </div>
 
       <div class="explore-section">
-        <h5>Want us to do a little more while we’re there?</h5>
-        <p class="explore-copy">Your clean can stay simple — or you can add only what matters to your home.</p>
-        <div class="extras-preview">
-          <span class="extra-pill">Bed linen change</span>
-          <span class="extra-pill">Laundry support</span>
-          <span class="extra-pill">Inside refrigerator</span>
-          <span class="extra-pill">Inside oven</span>
-          <span class="extra-pill">Light organization</span>
-        </div>
-        <details class="extras-more">
-          <summary>See more optional extras +</summary>
-          <div class="extras-full">
-            <span class="extra-pill">Interior windows</span>
-            <span class="extra-pill">Inside cabinets</span>
-            <span class="extra-pill">Pantry organization</span>
-            <span class="extra-pill">Closet organization</span>
-            <span class="extra-pill">Balcony / patio</span>
-            <span class="extra-pill">Pet areas</span>
-            <span class="extra-pill">Garage / basement</span>
-            <span class="extra-pill">Custom household need</span>
-          </div>
-        </details>
-      </div>
-
-      <div class="explore-section soft">
-        <h5>Love coming home to this feeling?</h5>
-        <p class="explore-copy">Standard Cleaning can be one-time care, or it can become a rhythm that keeps your home from feeling like another job.</p>
-        <div class="care-grid">
-          <div class="care-card"><strong>Weekly</strong><p>Maximum consistency with minimal buildup between visits.</p></div>
-          <div class="care-card"><strong>Every 2 Weeks</strong><p>A balanced rhythm for regular professional home care.</p></div>
-          <div class="care-card"><strong>Monthly</strong><p>A longer interval for homes that need periodic maintenance.</p></div>
-        </div>
-        <div class="regular-note">
-          <strong>There’s more to being a Pure Step regular.</strong>
-          <span>Qualifying recurring clients can receive a welcome experience, saved household preferences, a consistent finishing style, an identified professional team and loyalty benefits offered with their plan.</span>
-        </div>
+        <div class="explore-next"><strong>${x.nextTitle}</strong><span>${x.nextText}</span></div>
       </div>
 
       <div class="explore-final">
-        <h5>Now you know what your Pure Step clean can feel like.</h5>
-        <p>You can request an estimate now, or simply message us with your quiz result. We’ll confirm the right scope for your home before booking.</p>
+        <h5>Ready when you are.</h5>
+        <p>You already did the hard part: helping us understand what your space actually needs. Request an estimate now or send your result to Pure Step.</p>
         <div class="result-actions">
           <a class="btn btn-primary" href="#contact">Get My Estimate</a>
-          <a class="btn btn-secondary" href="sms:3316007040?&body=${encodeURIComponent(`Hi! I completed the Pure Step quiz. My result was: ${r.title}. I'd like to learn more and request an estimate.`)}">Text Pure Step</a>
+          <a class="btn btn-secondary" href="sms:3316007040?&body=${encodeURIComponent(`Hi! I completed the Pure Step quiz. My result was: ${r.title}. I'd like to request an estimate.`)}">Text Pure Step</a>
         </div>
         <button type="button" class="explore-close" id="closeMatchExplorer">Close service details ↑</button>
       </div>
@@ -1040,15 +1231,40 @@ function showResult(){
   resultField.value=r.title;
   discountField.value=discount;
   Array.from(serviceSelect.options).forEach(o=>{if(o.text.includes(r.service)||o.value===r.service) serviceSelect.value=o.value;});
-  const summary=`Quiz result: ${r.title}. ${discount}.`;
+
+  const detailAnswers=answers.filter(a=>a.path!=='start');
+  const internalSummary=detailAnswers.map((a,i)=>{
+    const q=(quiz[space]&&quiz[space][a.index])?quiz[space][a.index].q:`Question ${i+1}`;
+    return `${q}: ${a.label}`;
+  }).join(' | ');
+  const summary=`Quiz result: ${r.title}. ${discount}.${internalSummary?` Quiz details: ${internalSummary}`:''}`;
   if(!messageField.value.includes('Quiz result:')) messageField.value=(messageField.value?messageField.value+'\n\n':'')+summary;
+
   const sms=`Hi! I completed the Pure Step quiz. My result was: ${r.title}. I’d like to use the 15% quiz offer and request an estimate.`;
   const smsHref='sms:3316007040?&body='+encodeURIComponent(sms);
   const waHref='https://wa.me/13316007040?text='+encodeURIComponent(sms);
-  const canExploreStandard = r.title==='Standard Cleaning' || r.title==='Standard Cleaning + Recurring Care';
-  const exploreButton = canExploreStandard ? `<button type="button" class="btn explore-trigger" id="exploreMatch">Explore your match →</button>` : '';
-  rNode.innerHTML=`<div class="result-hero"><span class="badge">Your Pure Step Match</span><h3 class="serif" style="margin-top:13px">${r.title}</h3><p>Based on your answers, this looks like the best place to start. We’ll confirm the final recommendation after learning a little more about your space.</p><div class="result-points">${r.why.map(x=>`<div>✓ ${x}</div>`).join('')}</div><div class="discount"><strong>Quiz unlocked: 15% off your first qualifying service</strong><span style="display:block;margin-top:5px;color:rgba(255,255,255,.76);font-size:.88rem">Show or mention this quiz result when booking. Final eligibility is confirmed with your estimate.</span></div><div class="result-actions">${exploreButton}<a class="btn btn-primary" style="background:#fff;color:var(--sage-dark)" href="${smsHref}">Text this result →</a><a class="btn btn-soft" href="${waHref}" target="_blank">Send on WhatsApp</a><a class="btn btn-secondary" href="#contact">Get my estimate</a><button type="button" class="btn btn-secondary" id="restartQuiz">Retake quiz</button></div></div>${standardExplorerHTML(r)}`;
+
+  const signalChips=detailAnswers.slice(0,5).map(a=>`<span class="diagnosis-signal">${a.label}</span>`).join('');
+  const exploreButton=serviceExperience[r.title] ? `<button type="button" class="btn explore-trigger" id="exploreMatch">Explore your match →</button>` : '';
+
+  rNode.innerHTML=`<div class="result-hero">
+    <span class="badge">Your Pure Step Match</span>
+    <h3 class="serif" style="margin-top:13px">${r.title}</h3>
+    <p>This recommendation is based on the pattern in your answers — not just one response. Here’s why this is the strongest place to start.</p>
+    <div class="result-points">${r.why.map(x=>`<div>✓ ${x}</div>`).join('')}</div>
+    ${signalChips?`<div class="diagnosis-signals">${signalChips}</div>`:''}
+    <div class="discount"><strong>Quiz unlocked: 15% off your first qualifying service</strong><span style="display:block;margin-top:5px;color:rgba(255,255,255,.76);font-size:.88rem">Show or mention this quiz result when booking. Final eligibility is confirmed with your estimate.</span></div>
+    <div class="result-actions">
+      ${exploreButton}
+      <a class="btn btn-primary" style="background:#fff;color:var(--sage-dark)" href="${smsHref}">Text this result →</a>
+      <a class="btn btn-soft" href="${waHref}" target="_blank">Send on WhatsApp</a>
+      <a class="btn btn-secondary" href="#contact">Get my estimate</a>
+      <button type="button" class="btn btn-secondary" id="restartQuiz">Retake quiz</button>
+    </div>
+  </div>${matchExplorerHTML(r)}`;
+
   rNode.classList.add('show');
+
   const exploreMatchBtn=document.getElementById('exploreMatch');
   const matchExplorer=document.getElementById('matchExplorer');
   if(exploreMatchBtn && matchExplorer){
@@ -1064,7 +1280,11 @@ function showResult(){
       setTimeout(()=>rNode.scrollIntoView({behavior:'smooth',block:'start'}),60);
     });
   }
-  document.getElementById('restartQuiz').addEventListener('click',()=>{path='start';index=0;answers=[];space='';rNode.classList.remove('show');renderQ();});
+  document.getElementById('restartQuiz').addEventListener('click',()=>{
+    path='start';index=0;answers=[];space='';
+    rNode.classList.remove('show');
+    renderQ();
+  });
 }
 renderQ();
 document.getElementById('year').textContent=new Date().getFullYear();
