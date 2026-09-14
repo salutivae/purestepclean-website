@@ -424,6 +424,61 @@ footer{padding:34px 0 26px;border-top:1px solid var(--line)}
   .footer-logo{width:105px!important;height:70px!important}
 }
 
+
+/* ===== Pure Step optional quiz diagnosis: Standard Cleaning ===== */
+.match-explorer{display:none;margin-top:18px}
+.match-explorer.show{display:block;animation:psReveal .38s ease both}
+@keyframes psReveal{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.explore-trigger{background:var(--sage-dark)!important;color:#fff!important;border-color:var(--sage-dark)!important}
+.explore-wrap{margin-top:18px;border:1px solid var(--line);border-radius:28px;overflow:hidden;background:#fff}
+.explore-intro{padding:32px;background:linear-gradient(145deg,#fbf8f2,#eef3eb);position:relative;overflow:hidden}
+.explore-intro:after{content:"";position:absolute;width:210px;height:210px;border-radius:50%;right:-85px;top:-110px;background:rgba(116,137,106,.09)}
+.explore-eyebrow{font-size:.72rem;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:var(--sage);margin-bottom:10px}
+.explore-intro h4{font-family:Georgia,serif;font-size:clamp(1.75rem,3.8vw,2.9rem);line-height:1.05;color:var(--sage-dark);max-width:650px}
+.explore-intro p{margin-top:13px;color:var(--muted);max-width:690px;line-height:1.7}
+.explore-mini-cta{display:inline-flex;margin-top:18px;align-items:center;gap:7px;font-size:.85rem;font-weight:800;color:var(--sage-dark)}
+.explore-section{padding:31px 32px;border-top:1px solid var(--line)}
+.explore-section.soft{background:#faf8f3}
+.explore-section h5{font-family:Georgia,serif;color:var(--sage-dark);font-size:clamp(1.4rem,2.6vw,2rem);margin-bottom:8px}
+.explore-section>.explore-copy{color:var(--muted);line-height:1.65;max-width:730px}
+.explore-rooms{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:20px}
+.explore-room{border:1px solid var(--line);border-radius:16px;background:#fff;overflow:hidden}
+.explore-room summary{list-style:none;cursor:pointer;padding:16px;font-weight:850;color:var(--sage-dark);display:flex;justify-content:space-between;gap:8px;align-items:center}
+.explore-room summary::-webkit-details-marker{display:none}
+.explore-room summary:after{content:"+";font-size:1.15rem;color:var(--sage)}
+.explore-room[open] summary:after{content:"−"}
+.explore-room ul{padding:0 17px 17px 31px;color:var(--muted);font-size:.84rem;line-height:1.65}
+.finish-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px}
+.finish-card{border:1px solid var(--line);border-radius:20px;padding:21px;background:#fff;position:relative}
+.finish-card.hotel{background:linear-gradient(145deg,#eef3eb,#f8f4ec)}
+.finish-card .finish-label{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;font-weight:900;color:var(--sage)}
+.finish-card strong{display:block;color:var(--sage-dark);font-size:1.08rem;margin-top:7px}
+.finish-card p{color:var(--muted);font-size:.86rem;margin-top:7px;line-height:1.55}
+.extras-preview{display:flex;flex-wrap:wrap;gap:9px;margin-top:18px}
+.extra-pill{border:1px solid var(--line);background:#fff;border-radius:999px;padding:10px 13px;color:var(--sage-dark);font-size:.8rem;font-weight:750}
+.extras-more{margin-top:13px}
+.extras-more summary{cursor:pointer;color:var(--sage-dark);font-weight:850;font-size:.86rem}
+.extras-full{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.care-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:18px}
+.care-card{border:1px solid var(--line);border-radius:17px;padding:17px;background:#fff}
+.care-card strong{color:var(--sage-dark)}
+.care-card p{color:var(--muted);font-size:.8rem;line-height:1.45;margin-top:5px}
+.regular-note{margin-top:16px;padding:17px 18px;border-radius:17px;background:var(--sage-dark);color:#fff}
+.regular-note strong{display:block;font-size:.95rem}
+.regular-note span{display:block;margin-top:6px;color:rgba(255,255,255,.76);font-size:.81rem;line-height:1.55}
+.explore-final{text-align:center;padding:34px 28px;background:#f3efe7;border-top:1px solid var(--line)}
+.explore-final h5{font-family:Georgia,serif;color:var(--sage-dark);font-size:clamp(1.55rem,3vw,2.25rem)}
+.explore-final p{color:var(--muted);max-width:570px;margin:9px auto 18px;line-height:1.6}
+.explore-final .result-actions{justify-content:center}
+.explore-close{border:0;background:transparent;color:var(--muted);font-weight:800;cursor:pointer;margin-top:15px}
+@media(max-width:760px){
+  .explore-intro,.explore-section{padding:25px 20px}
+  .explore-rooms{grid-template-columns:1fr 1fr}
+  .finish-grid{grid-template-columns:1fr}
+  .care-grid{grid-template-columns:1fr}
+}
+@media(max-width:480px){.explore-rooms{grid-template-columns:1fr}}
+
 </style>
 </head>
 <body>
@@ -843,6 +898,140 @@ function getResult(){
   if(count('custom','targeted')>=1) return {title:'Customized Commercial Plan',service:'Commercial — Custom Plan',why:['Your space has specific operational needs that do not fit a one-size package.','We can build the scope around high-traffic areas, bathrooms, common spaces and your schedule.']};
   return {title:'Recurring Commercial Cleaning',service:'Commercial — Recurring Cleaning',why:['Your space sounds like it needs reliable maintenance and consistent presentation.','Recurring care can help keep employees focused on their actual work and keep the environment client-ready.']};
 }
+
+function standardExplorerHTML(r){
+  const standardMatch = r.title==='Standard Cleaning' || r.title==='Standard Cleaning + Recurring Care';
+  if(!standardMatch) return '';
+
+  return `
+  <div class="match-explorer" id="matchExplorer">
+    <div class="explore-wrap">
+      <div class="explore-intro">
+        <div class="explore-eyebrow">Explore your match</div>
+        <h4>Imagine coming home and everything simply feels right.</h4>
+        <p>Standard Cleaning is designed for homes that already have a good baseline and need consistent professional care — without turning every visit into a full reset.</p>
+        <span class="explore-mini-cta">Keep scrolling to see what your clean can feel like ↓</span>
+      </div>
+
+      <div class="explore-section">
+        <h5>This is what Standard Cleaning takes care of.</h5>
+        <p class="explore-copy">The essentials are handled throughout the home. Tap a space only if you want to see the details.</p>
+        <div class="explore-rooms">
+          <details class="explore-room">
+            <summary>Kitchen</summary>
+            <ul>
+              <li>Countertops & accessible surfaces</li>
+              <li>Sink & faucet</li>
+              <li>Stovetop surface</li>
+              <li>Exterior of appliances</li>
+              <li>Routine cabinet-exterior care</li>
+              <li>Floors & light visible tidying</li>
+            </ul>
+          </details>
+          <details class="explore-room">
+            <summary>Bathrooms</summary>
+            <ul>
+              <li>Toilet, sink & vanity</li>
+              <li>Mirrors & fixtures</li>
+              <li>Tub / shower routine cleaning</li>
+              <li>Trash removal</li>
+              <li>Floors</li>
+              <li>Light presentation & organization</li>
+            </ul>
+          </details>
+          <details class="explore-room">
+            <summary>Bedrooms</summary>
+            <ul>
+              <li>Accessible surface dusting</li>
+              <li>Mirrors & visible touchpoints</li>
+              <li>Floors</li>
+              <li>Light organization</li>
+              <li>Bed presentation when selected</li>
+            </ul>
+          </details>
+          <details class="explore-room">
+            <summary>Living Spaces</summary>
+            <ul>
+              <li>Accessible surface dusting</li>
+              <li>Tables & visible furniture surfaces</li>
+              <li>Mirrors</li>
+              <li>Floors</li>
+              <li>Light organization</li>
+              <li>Final presentation</li>
+            </ul>
+          </details>
+        </div>
+      </div>
+
+      <div class="explore-section soft">
+        <h5>But clean doesn’t have to look the same for everyone.</h5>
+        <p class="explore-copy">Choose the feeling you want to come home to. Your preference can become part of the way we care for your home.</p>
+        <div class="finish-grid">
+          <div class="finish-card">
+            <span class="finish-label">Natural</span>
+            <strong>Home Finish</strong>
+            <p>Fresh, comfortable and ready for real life — a polished finish that still feels naturally yours.</p>
+          </div>
+          <div class="finish-card hotel">
+            <span class="finish-label">Elevated</span>
+            <strong>Hotel-Inspired Finish</strong>
+            <p>A more presentation-focused finish with styled details when selected: beds, towels, paper details and guest-ready touches.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="explore-section">
+        <h5>Want us to do a little more while we’re there?</h5>
+        <p class="explore-copy">Your clean can stay simple — or you can add only what matters to your home.</p>
+        <div class="extras-preview">
+          <span class="extra-pill">Bed linen change</span>
+          <span class="extra-pill">Laundry support</span>
+          <span class="extra-pill">Inside refrigerator</span>
+          <span class="extra-pill">Inside oven</span>
+          <span class="extra-pill">Light organization</span>
+        </div>
+        <details class="extras-more">
+          <summary>See more optional extras +</summary>
+          <div class="extras-full">
+            <span class="extra-pill">Interior windows</span>
+            <span class="extra-pill">Inside cabinets</span>
+            <span class="extra-pill">Pantry organization</span>
+            <span class="extra-pill">Closet organization</span>
+            <span class="extra-pill">Balcony / patio</span>
+            <span class="extra-pill">Pet areas</span>
+            <span class="extra-pill">Garage / basement</span>
+            <span class="extra-pill">Custom household need</span>
+          </div>
+        </details>
+      </div>
+
+      <div class="explore-section soft">
+        <h5>Love coming home to this feeling?</h5>
+        <p class="explore-copy">Standard Cleaning can be one-time care, or it can become a rhythm that keeps your home from feeling like another job.</p>
+        <div class="care-grid">
+          <div class="care-card"><strong>Weekly</strong><p>Maximum consistency with minimal buildup between visits.</p></div>
+          <div class="care-card"><strong>Every 2 Weeks</strong><p>A balanced rhythm for regular professional home care.</p></div>
+          <div class="care-card"><strong>Monthly</strong><p>A longer interval for homes that need periodic maintenance.</p></div>
+        </div>
+        <div class="regular-note">
+          <strong>There’s more to being a Pure Step regular.</strong>
+          <span>Qualifying recurring clients can receive a welcome experience, saved household preferences, a consistent finishing style, an identified professional team and loyalty benefits offered with their plan.</span>
+        </div>
+      </div>
+
+      <div class="explore-final">
+        <h5>Now you know what your Pure Step clean can feel like.</h5>
+        <p>You can request an estimate now, or simply message us with your quiz result. We’ll confirm the right scope for your home before booking.</p>
+        <div class="result-actions">
+          <a class="btn btn-primary" href="#contact">Get My Estimate</a>
+          <a class="btn btn-secondary" href="sms:3316007040?&body=${encodeURIComponent(`Hi! I completed the Pure Step quiz. My result was: ${r.title}. I'd like to learn more and request an estimate.`)}">Text Pure Step</a>
+        </div>
+        <button type="button" class="explore-close" id="closeMatchExplorer">Close service details ↑</button>
+      </div>
+    </div>
+  </div>`;
+}
+
 function showResult(){
   qNode.style.display='none';
   pNode.style.width='100%';
@@ -856,8 +1045,25 @@ function showResult(){
   const sms=`Hi! I completed the Pure Step quiz. My result was: ${r.title}. I’d like to use the 15% quiz offer and request an estimate.`;
   const smsHref='sms:3316007040?&body='+encodeURIComponent(sms);
   const waHref='https://wa.me/13316007040?text='+encodeURIComponent(sms);
-  rNode.innerHTML=`<div class="result-hero"><span class="badge">Your Pure Step Match</span><h3 class="serif" style="margin-top:13px">${r.title}</h3><p>Based on your answers, this looks like the best place to start. We’ll confirm the final recommendation after learning a little more about your space.</p><div class="result-points">${r.why.map(x=>`<div>✓ ${x}</div>`).join('')}</div><div class="discount"><strong>Quiz unlocked: 15% off your first qualifying service</strong><span style="display:block;margin-top:5px;color:rgba(255,255,255,.76);font-size:.88rem">Show or mention this quiz result when booking. Final eligibility is confirmed with your estimate.</span></div><div class="result-actions"><a class="btn btn-primary" style="background:#fff;color:var(--sage-dark)" href="${smsHref}">Text this result →</a><a class="btn btn-soft" href="${waHref}" target="_blank">Send on WhatsApp</a><a class="btn btn-secondary" href="#contact">Get my estimate</a><button type="button" class="btn btn-secondary" id="restartQuiz">Retake quiz</button></div></div>`;
+  const canExploreStandard = r.title==='Standard Cleaning' || r.title==='Standard Cleaning + Recurring Care';
+  const exploreButton = canExploreStandard ? `<button type="button" class="btn explore-trigger" id="exploreMatch">Explore your match →</button>` : '';
+  rNode.innerHTML=`<div class="result-hero"><span class="badge">Your Pure Step Match</span><h3 class="serif" style="margin-top:13px">${r.title}</h3><p>Based on your answers, this looks like the best place to start. We’ll confirm the final recommendation after learning a little more about your space.</p><div class="result-points">${r.why.map(x=>`<div>✓ ${x}</div>`).join('')}</div><div class="discount"><strong>Quiz unlocked: 15% off your first qualifying service</strong><span style="display:block;margin-top:5px;color:rgba(255,255,255,.76);font-size:.88rem">Show or mention this quiz result when booking. Final eligibility is confirmed with your estimate.</span></div><div class="result-actions">${exploreButton}<a class="btn btn-primary" style="background:#fff;color:var(--sage-dark)" href="${smsHref}">Text this result →</a><a class="btn btn-soft" href="${waHref}" target="_blank">Send on WhatsApp</a><a class="btn btn-secondary" href="#contact">Get my estimate</a><button type="button" class="btn btn-secondary" id="restartQuiz">Retake quiz</button></div></div>${standardExplorerHTML(r)}`;
   rNode.classList.add('show');
+  const exploreMatchBtn=document.getElementById('exploreMatch');
+  const matchExplorer=document.getElementById('matchExplorer');
+  if(exploreMatchBtn && matchExplorer){
+    exploreMatchBtn.addEventListener('click',()=>{
+      matchExplorer.classList.toggle('show');
+      exploreMatchBtn.textContent=matchExplorer.classList.contains('show')?'Hide service details ↑':'Explore your match →';
+      if(matchExplorer.classList.contains('show')) setTimeout(()=>matchExplorer.scrollIntoView({behavior:'smooth',block:'start'}),80);
+    });
+    const closeExplorer=document.getElementById('closeMatchExplorer');
+    if(closeExplorer) closeExplorer.addEventListener('click',()=>{
+      matchExplorer.classList.remove('show');
+      exploreMatchBtn.textContent='Explore your match →';
+      setTimeout(()=>rNode.scrollIntoView({behavior:'smooth',block:'start'}),60);
+    });
+  }
   document.getElementById('restartQuiz').addEventListener('click',()=>{path='start';index=0;answers=[];space='';rNode.classList.remove('show');renderQ();});
 }
 renderQ();
